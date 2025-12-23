@@ -6,6 +6,7 @@ import CourseFilterProvider from "../context/CourseFilterProvider";
 import AboutSection from "../components/HomePage/AboutSection.jsx";
 import StatsSection from "../components/HomePage/StatsSection.jsx";
 import ProductScrollSection from "../components/HomePage/ProductScrollSection.jsx";
+import ContactSection from "../components/HomePage/ContactSection.jsx";
 const HomePage = () => {
   return (
     <CourseFilterProvider>
@@ -14,6 +15,7 @@ const HomePage = () => {
       <AboutSection />
       <StatsSection />
       <ProductScrollSection />
+      <ContactSection />
     </CourseFilterProvider>
   );
 };

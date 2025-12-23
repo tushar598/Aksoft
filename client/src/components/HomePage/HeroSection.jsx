@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useCourseFilter from "../../hooks/useCourseFilter";
 
@@ -35,34 +35,47 @@ const HeroSection = () => {
   const [[index, direction], setIndex] = useState([0, 0]);
   const { setFilter } = useCourseFilter();
 
-  const handleLearnMore = (filter) => {
-    setFilter(filter);
-
-    document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // 🔹 NEW: Prevent rapid slide switching
+  const swipeLock = useRef(false);
 
   const paginate = (newDirection) => {
+    if (swipeLock.current) return;
+
+    swipeLock.current = true;
     setIndex([
       (index + newDirection + slides.length) % slides.length,
       newDirection,
     ]);
+
+    setTimeout(() => {
+      swipeLock.current = false;
+    }, 700); // matches animation duration
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      paginate(1);
-    }, 10000);
+  const handleLearnMore = (filter) => {
+    setFilter(filter);
+    document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" });
+  };
 
-    return () => clearInterval(interval);
-  }, [index]);
+  // 🔹 NEW: Trackpad 2-finger swipe (wheel gesture)
+  const handleWheel = (e) => {
+    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+      if (e.deltaX > 40) paginate(1);
+      if (e.deltaX < -40) paginate(-1);
+    }
+  };
 
   return (
-    <section id="home" className="relative h-[800px] overflow-hidden">
+    <section
+      id="home"
+      className="relative h-[800px] overflow-hidden"
+      onWheel={handleWheel} // 🔹 NEW
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={index}
           custom={direction}
-          className="absolute inset-0  p-5 flex flex-col lg:flex-row items-center justify-center bg-[#f5f5f7] px-6 lg:px-20"
+          className="absolute inset-0 p-5 flex flex-col lg:flex-row items-center justify-center bg-[#f5f5f7] px-6 lg:px-20"
           variants={{
             enter: { opacity: 0 },
             center: { opacity: 1 },
@@ -72,12 +85,14 @@ const HeroSection = () => {
           animate="center"
           exit="exit"
           transition={{ duration: 0.8, ease: "easeInOut" }}
+
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.8}
+          style={{ touchAction: "pan-y" }} // 🔹 NEW (mobile friendly)
+
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = Math.abs(offset.x) * velocity.x;
-
             if (swipe < -swipeConfidenceThreshold) paginate(1);
             else if (swipe > swipeConfidenceThreshold) paginate(-1);
           }}
@@ -101,31 +116,24 @@ const HeroSection = () => {
               >
                 Learn more
               </button>
-              <button className="border border-[#df2771] text-[#fa4b37]  px-6 py-2 rounded-full ">
-                <a
-                  href={slides[index].link}
-                  className="hover:border-b-1  hover:border-[#fa4b37] "
-                >
-                  Try it free
-                </a>
+
+              <button className="border border-[#df2771] text-[#fa4b37] px-6 py-2 rounded-full">
+                Try it free
               </button>
             </div>
           </div>
 
-          {/* IMAGE (Optimized) */}
+          {/* IMAGE */}
           <div className="flex-1 flex justify-center mt-10 lg:mt-0">
             <img
               src={slides[index].image}
               alt={slides[index].title}
               loading="lazy"
-              decoding="async"
               className="max-h-[70vh] sm:h-[30vh] lg:h-[70vh] md:h-[40vh] w-auto object-contain"
             />
           </div>
         </motion.div>
       </AnimatePresence>
-
-    
 
       {/* DOTS */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-50">

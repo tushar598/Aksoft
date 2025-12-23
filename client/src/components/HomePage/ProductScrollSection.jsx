@@ -4,19 +4,37 @@ const products = [
   {
     name: "Sakshi Sharma",
     tag: "Web Developer",
-    price: "₹134900.00",
+    price: "₹13 LPA",
     image: "/iphone.jpeg",
   },
   {
-    name: "MacBook Pro 14” with M5",
-    tag: "Apple Intelligence",
-    price: "From ₹169900.00",
+    name: "Shivani Nigam",
+    tag: "Web Developer",
+    price: "₹11 LPA",
     image: "/iphone01.jpeg",
   },
   {
     name: "iPad Pro",
-    tag: "Apple Intelligence",
-    price: "From ₹99900.00",
+    tag: "Web Developer",
+    price: "₹10 LPA",
+    image: "/student02.png",
+  },
+  {
+    name: "iPad Pro",
+    tag: "Web Developer",
+    price: "₹10 LPA",
+    image: "/student03.png",
+  },
+  {
+    name: "iPad Pro",
+    tag: "Web Developer",
+    price: "₹10 LPA",
+    image: "/ipad.png",
+  },
+  {
+    name: "iPad Pro",
+    tag: "Web Developer",
+    price: "₹10 LPA",
     image: "/ipad.png",
   },
 ];
@@ -27,8 +45,8 @@ const ProductScrollSection = () => {
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6 mb-10">
         <h2 className="text-3xl text-center md:text-4xl font-semibold">
-          <span className="text-blue-500">The latest.</span>{" "}
-          <span className="text-gray-700">Truly awe-inspired gifts.</span>
+          <span className="text-[#fa4b37]">Placed</span>{" "}
+          <span className="text-gray-700">Students.</span>
         </h2>
       </div>
 
@@ -52,8 +70,6 @@ const ProductScrollSection = () => {
                 cursor-pointer
               "
             >
-            
-
               {/* IMAGE */}
               <img
                 src={item.image}
@@ -69,30 +85,30 @@ const ProductScrollSection = () => {
                 loading="lazy"
               />
 
-              {/* DARK FADE FOR TEXT READABILITY */}
-              <div className="absolute inset-0 z-20 hover:bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+                {/* DARK FADE FOR TEXT READABILITY */}
+              <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/50 via-black/20 to-transparent lg:bg-none lg:hover:bg-gradient-to-t" />
 
               {/* TEXT CONTENT */}
               <div
                 className="
-                  absolute
-                  left-0
-                  bottom-[-100%]
-                  z-30
-                  w-full
-                  p-6
-                  text-white
-                  transition-all
-                  duration-500
-                  group-hover:bottom-0
-                "
+    absolute
+    left-0
+    bottom-0
+    lg:bottom-[-100%]
+    z-30
+    w-full
+    p-6
+    text-white
+    transition-all
+    duration-500
+    lg:group-hover:bottom-0
+  "
               >
                 <span className="block text-sm opacity-80">{item.tag}</span>
 
                 <h3 className="text-2xl font-semibold mt-1">{item.name}</h3>
 
                 <p className="mt-2 text-sm opacity-90">Package {item.price}</p>
-
               </div>
             </div>
           ))}
