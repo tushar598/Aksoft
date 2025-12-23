@@ -40,7 +40,7 @@ export default function AboutSection() {
           className="relative"
         >
           {/* Gradient Card */}
-          <div className="bg-gradient-to-br from-red-500 via-pink-500 to-pink-600 rounded-2xl p-8 md:p-10 text-white shadow-2xl">
+          <div className="bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] rounded-2xl p-8 md:p-10 text-white shadow-2xl">
             <h3 className="text-2xl md:text-3xl font-semibold mb-6">
               What you think about us ?
             </h3>
@@ -75,7 +75,7 @@ export default function AboutSection() {
           </div>
 
           {/* Soft Glow Effect */}
-          <div className="absolute -inset-4 bg-gradient-to-r from-red-400 to-pink-500 blur-3xl opacity-20 -z-10"></div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-[#fa4b37] to-[#df2771] blur-3xl opacity-20 -z-10"></div>
         </motion.div>
       </div>
     </section>

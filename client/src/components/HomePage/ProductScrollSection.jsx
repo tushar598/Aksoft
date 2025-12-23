@@ -5,13 +5,13 @@ const products = [
     name: "Sakshi Sharma",
     tag: "Web Developer",
     price: "₹13 LPA",
-    image: "/iphone.jpeg",
+    image: "/student03.png",
   },
   {
     name: "Shivani Nigam",
     tag: "Web Developer",
     price: "₹11 LPA",
-    image: "/iphone01.jpeg",
+    image: "/student01.png",
   },
   {
     name: "iPad Pro",
@@ -44,7 +44,7 @@ const ProductScrollSection = () => {
     <section className="py-16 bg-[#f5f5f7]">
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6 mb-10">
-        <h2 className="text-3xl text-center md:text-4xl font-semibold">
+        <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-gray-800 text-center">
           <span className="text-[#fa4b37]">Placed</span>{" "}
           <span className="text-gray-700">Students.</span>
         </h2>

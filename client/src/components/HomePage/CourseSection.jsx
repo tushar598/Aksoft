@@ -103,7 +103,7 @@ const CourseSection = () => {
             onClick={() => setFilter(item)}
             className={`px-5 py-2  ${item} rounded-full text-sm transition ${
               filter === item
-                ? "bg-gradient-to-br from-red-500 via-pink-500 to-pink-600 text-white shadow-md"
+                ? "bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white shadow-md"
                 : "bg-white text-gray-600 border hover:bg-blue-50"
             }`}
           >
@@ -154,7 +154,7 @@ const CourseSection = () => {
                     <p>{course.desc}</p>
                   </div>
 
-                  <button className="mt-6 w-full rounded-full bg-gradient-to-br from-red-500 via-pink-500 to-pink-600 text-white py-2 hover:shadow-lg transition-shadow">
+                  <button className="mt-6 w-full rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white py-2 hover:shadow-lg transition-shadow">
                     View Course
                   </button>
                 </div>
