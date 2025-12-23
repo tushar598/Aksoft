@@ -14,28 +14,28 @@ const products = [
     image: "/student01.png",
   },
   {
-    name: "iPad Pro",
+    name: "student name",
     tag: "Web Developer",
     price: "₹10 LPA",
     image: "/student02.png",
   },
   {
-    name: "iPad Pro",
+    name: "student name",
     tag: "Web Developer",
     price: "₹10 LPA",
     image: "/student03.png",
   },
   {
-    name: "iPad Pro",
+    name: "student name",
     tag: "Web Developer",
     price: "₹10 LPA",
-    image: "/ipad.png",
+    image: "/student02.png",
   },
   {
-    name: "iPad Pro",
+    name: "student name",
     tag: "Web Developer",
     price: "₹10 LPA",
-    image: "/ipad.png",
+    image: "/student03.png",
   },
 ];
 

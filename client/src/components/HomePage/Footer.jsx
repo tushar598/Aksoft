@@ -57,6 +57,8 @@ const Footer = () => {
                   key={i}
                   href={link}
                   className="text-white/60 hover:text-white transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon />
                 </a>
