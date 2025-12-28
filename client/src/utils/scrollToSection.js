@@ -1,4 +1,5 @@
 export const scrollToSection = (id, offset = 70) => {
+  // OTHER SECTIONS
   const el = document.getElementById(id);
   if (!el) return;
 

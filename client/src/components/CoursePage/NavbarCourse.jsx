@@ -1,19 +1,8 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import useScrollSpy from "../hooks/useScrollSpy";
-import { scrollToSection } from "../utils/scrollToSection";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function NavbarCourse() {
   const [open, setOpen] = useState(false);
-
-  // 👇 ADD scroll spy hook
-  const activeSection = useScrollSpy([
-    "home",
-    "courses",
-    "placement_section",
-    "about_section",
-    "footer-contact",
-  ]);
 
   return (
     <>
@@ -26,7 +15,7 @@ export default function Navbar() {
             <div className="flex items-center ">
               <img src="/aksoft.png" alt="logo" className="w-8 h-8" />
               <div>
-                <span className="font-bold text-3xl">ksoft</span>
+                <a href="/" className="font-bold text-3xl">ksoft</a>
               </div>
             </div>
 
@@ -34,36 +23,26 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center justify-between gap-18">
               <ul className="flex items-center gap-8">
                 {[
-                  ["Home", "home"],
-                  ["Course", "courses"],
-                  ["Placement", "placement_section"],
-                  ["About-us", "about_section"],
-                  ["Contact", "footer-contact"],
-                ].map(([label, sectionId]) => (
+                  ["Home", "/"],
+                  ["Course", "/course"],
+                  ["Placement", "/placement"],
+                ].map(([label, navigate]) => (
                   <li key={label}>
-                    <button
-                      onClick={() => scrollToSection(sectionId)}
-                      className={`relative text-base font-medium transition
-                        ${
-                          activeSection === sectionId
-                            ? "text-[#fa4b37] after:scale-x-100"
-                            : "text-slate-700 after:scale-x-0"
-                        }
-                        after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full
-                        after:bg-gradient-to-r after:from-[#fa4b37] after:to-[#df2771]
-                        after:transition-transform hover:after:scale-x-100
-                      `}
+                    <Link
+                      to={navigate}
+                      className="
+    relative text-base font-medium
+     after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-gradient-to-r after:from-[#fa4b37] after:to-[#df2771] after:transition-transform hover:after:scale-x-100 after:scale-x-0 after:transition-transform after:duration-300 after:ease-out
+    hover:after:scale-x-100
+  "
                     >
                       {label}
-                    </button>
+                    </Link>
                   </li>
                 ))}
               </ul>
 
-              <button
-                onClick={() => scrollToSection("footer-contact")}
-                className="rounded-lg px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#fa4b37] to-[#df2771]"
-              >
+              <button className="rounded-lg px-6 py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#fa4b37] to-[#df2771]">
                 Contact-us
               </button>
             </div>
@@ -99,22 +78,20 @@ export default function Navbar() {
         >
           <ul className="flex flex-col items-center ">
             {[
-              ["Home", "home"],
-              ["Course", "courses"],
-              ["Placement", "placement_section"],
-              ["About-us", "about_section"],
-              ["Contact", "footer-contact"],
-            ].map(([label, link]) => (
+              ["Home", "/"],
+              ["Course", "/course"],
+              ["Placement", "/placement"],
+            ].map(([label, navigate]) => (
               <li key={label}>
-                <button
+                <Link
+                  to={navigate}
                   onClick={() => {
-                    scrollToSection(link);
                     setOpen(false);
                   }}
                   className="block px-6 py-4 text-center text-white font-medium hover:bg-white/60 rounded-2xl"
                 >
                   {label}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>

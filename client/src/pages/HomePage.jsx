@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../components/Navbar.jsx";
+import Navbar from "../components/HomePage/Navbar.jsx";
 import HeroSection from "../components/HomePage/HeroSection.jsx";
 import CourseSection from "../components/HomePage/CourseSection.jsx";
 import CourseFilterProvider from "../context/CourseFilterProvider";
@@ -9,9 +9,11 @@ import ProductScrollSection from "../components/HomePage/ProductScrollSection.js
 import ContactSection from "../components/HomePage/ContactSection.jsx";
 import Footer from "../components/HomePage/Footer.jsx";
 import MapSection from "../components/HomePage/MapSection.jsx";
+
 const HomePage = () => {
   return (
     <CourseFilterProvider>
+       <Navbar />
       <HeroSection />
       <CourseSection />
       <AboutSection />

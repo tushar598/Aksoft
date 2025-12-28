@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import useCourseFilter from "../../hooks/useCourseFilter";
 
 const filters = ["Beginner", "Web Dev", "Problem Solving"];
@@ -10,6 +11,7 @@ const courses = [
     desc: "Learn the fundamentals of programming with C++.",
     level: "Beginner",
     image: "/card01.jpg",
+    link: "/course"
   },
   {
     id: 2,
@@ -17,6 +19,7 @@ const courses = [
     desc: "Build modern and responsive websites from scratch.",
     level: "Web Dev",
     image: "/card05.jpg",
+    link: "/course"
   },
   {
     id: 3,
@@ -24,6 +27,7 @@ const courses = [
     desc: "Become a full-stack developer with MongoDB, Express, React & Node.",
     level: "Web Dev",
     image: "/card06.jpg",
+    link: "/course"
   },
   {
     id: 4,
@@ -31,6 +35,7 @@ const courses = [
     desc: "Strengthen logic with arrays, recursion & patterns.",
     level: "Problem Solving",
     image: "/card09.jpg",
+    link: "/course"
   },
   {
     id: 5,
@@ -38,6 +43,7 @@ const courses = [
     desc: "Deep dive into advanced Java concepts and frameworks.",
     level: "Problem Solving",
     image: "/card10.jpg",
+    link: "/course"
   },
   {
     id: 6,
@@ -45,6 +51,7 @@ const courses = [
     desc: "Master object-oriented programming with Java.",
     level: "Beginner",
     image: "/card02.jpg",
+    link: "/course"
   },
   {
     id: 7,
@@ -52,6 +59,7 @@ const courses = [
     desc: "Master the fundamentals of programming with Python.",
     level: "Beginner",
     image: "/card03.png",
+    link: "/course"
   },
   {
     id: 8,
@@ -59,6 +67,7 @@ const courses = [
     desc: "Master the fundamentals of programming with C.",
     level: "Beginner",
     image: "/card04.jpg",
+    link: "/course"
   },
   {
     id: 9,
@@ -66,6 +75,7 @@ const courses = [
     desc: "Master the fundamentals of programming with JavaScript.",
     level: "Beginner",
     image: "/card07.jpg",
+    link: "/course"
   },
   {
     id: 10,
@@ -73,6 +83,7 @@ const courses = [
     desc: "Master the fundamentals of Database Management Systems.",
     level: "Web Dev",
     image: "/card08.jpg",
+    link: "/course"
   },
 ];
 
@@ -155,7 +166,7 @@ const CourseSection = () => {
                   </div>
 
                   <button className="mt-6 w-full rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white py-2 hover:shadow-lg transition-shadow">
-                    View Course
+                    <Link to={course.link}>View Course</Link>
                   </button>
                 </div>
               </motion.div>
