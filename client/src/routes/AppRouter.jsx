@@ -9,7 +9,7 @@ export const AppRouter = () => {
      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/course" element={<CoursePage />} />
+        <Route path="/course/:course" element={<CoursePage />} />
       </Routes>
     </>
   );
