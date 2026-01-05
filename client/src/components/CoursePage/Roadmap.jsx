@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 /* =======================
    Visual Constants
 ======================= */
-const MAIN_NODE_COLOR = "bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771]";
+const MAIN_NODE_COLOR =
+  "bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771]";
 const SUB_NODE_COLOR = "bg-purple-100";
 const BORDER_COLOR = "border-gray-900";
 
@@ -13,8 +13,6 @@ const BORDER_COLOR = "border-gray-900";
    Roadmap Item Component
 ======================= */
 const RoadmapItem = ({ item, isLast }) => {
-  
-
   return (
     <div className="relative flex flex-col items-center justify-center w-full mb-16 md:mb-24">
       {/* Central Connector Line */}
@@ -51,16 +49,18 @@ const RoadmapItem = ({ item, isLast }) => {
         <svg
           className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block -mt-8 overflow-visible"
           style={{ zIndex: -1 }}
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
         >
           {item.points.map((_, i) => {
             const side = i % 2 === 0 ? "left" : "right";
             return (
               <path
                 key={i}
-                d={`M 50% 0 Q 50% 20, ${side === "left" ? "25%" : "75%"} 40`}
+                d={`M 50 0 Q 50 20, ${side === "left" ? 25 : 75} 40`}
                 fill="none"
                 stroke="#94a3b8"
-                strokeWidth="2"
+                strokeWidth="0.2"
                 strokeDasharray="4 4"
                 className="opacity-50"
               />
@@ -89,8 +89,6 @@ const RoadmapItem = ({ item, isLast }) => {
                 mx-auto md:mx-0 w-full md:w-auto max-w-xs
               `}
             >
-             
-
               <span className="text-sm md:text-base font-medium text-gray-800">
                 {point}
               </span>
@@ -151,4 +149,3 @@ const Roadmap = ({ data }) => {
 };
 
 export default Roadmap;
-

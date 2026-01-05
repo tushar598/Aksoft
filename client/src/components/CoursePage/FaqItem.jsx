@@ -75,9 +75,9 @@ const FaqItem = ({ service, isActive, onActivate }) => {
   return (
     <div
       ref={containerRef}
-      onMouseEnter={onActivate}
+      onClick={onActivate}
       className={`relative w-full border-b border-gray-300 overflow-hidden cursor-pointer group ${
-        isActive ? "bg-white" : "hover:bg-gray-50"
+        isActive ? "bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] " : "hover:bg-gray-50"
       } transition-colors duration-300`}
       style={{ height: "96px" }}
     >
@@ -113,8 +113,8 @@ const FaqItem = ({ service, isActive, onActivate }) => {
           <h2
             ref={leftTitleRef}
             className="
-              font-bold ml-1 tracking-tight text-black
-              text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+              font-bold ml-1 tracking-tight text-white
+              text-2xl sm:text-3xl md:text-4xl lg:text-4xl
               leading-snug 
             "
           >
@@ -124,7 +124,7 @@ const FaqItem = ({ service, isActive, onActivate }) => {
           <p
             ref={descRef}
             className="
-              text-gray-600
+              text-white
               text-sm sm:text-base
               leading-relaxed
               max-w-3xl
