@@ -1,0 +1,238 @@
+[
+  {
+    "features": [
+      {
+        "title": "Full-Stack Development",
+        "description": "Build complete web applications using MongoDB, Express, React, and Node.js."
+      },
+      {
+        "title": "Modern Frontend with React",
+        "description": "Create dynamic and responsive user interfaces using components, hooks, and state management."
+      },
+      {
+        "title": "Scalable Backend APIs",
+        "description": "Design RESTful APIs with Node.js and Express following best backend practices."
+      },
+      {
+        "title": "Database with MongoDB",
+        "description": "Store and manage data efficiently using NoSQL databases and Mongoose ORM."
+      },
+      {
+        "title": "Real-World Project Ready",
+        "description": "Gain hands-on experience building production-ready applications from scratch."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Introduction to MERN Stack",
+    "points": [
+      " 1. What is MERN stack",
+      " 2. Full-stack web development overview",
+      " 3. Role of MongoDB, Express, React & Node"
+    ],
+    "bg": "/mern/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Web Fundamentals Refresher",
+    "points": [
+      " 1. HTML & CSS basics",
+      " 2. JavaScript fundamentals",
+      " 3. Client-server model"
+    ],
+    "bg": "/mern/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Advanced JavaScript",
+    "points": [
+      " 1. ES6+ features",
+      " 2. Closures & scope",
+      " 3. Asynchronous JavaScript"
+    ],
+    "bg": "/mern/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Git & GitHub",
+    "points": [
+      " 1. Version control basics",
+      " 2. GitHub workflow",
+      " 3. Collaboration best practices"
+    ],
+    "bg": "/mern/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "React Fundamentals",
+    "points": [
+      " 1. JSX & components",
+      " 2. Props & state",
+      " 3. React project structure"
+    ],
+    "bg": "/mern/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "React Hooks & State Management",
+    "points": [
+      " 1. useState & useEffect",
+      " 2. Controlled components",
+      " 3. Component lifecycle"
+    ],
+    "bg": "/mern/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Routing & Navigation",
+    "points": [
+      " 1. React Router",
+      " 2. Dynamic routes",
+      " 3. Protected routes"
+    ],
+    "bg": "/mern/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "UI Styling & Responsiveness",
+    "points": [
+      " 1. CSS frameworks",
+      " 2. Responsive design",
+      " 3. UI best practices"
+    ],
+    "bg": "/mern/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Node.js Basics",
+    "points": [" 1. Node.js runtime", " 2. Event loop", " 3. Modules & npm"],
+    "bg": "/mern/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Express.js Fundamentals",
+    "points": [
+      " 1. Express setup",
+      " 2. Routing & middleware",
+      " 3. Request & response lifecycle"
+    ],
+    "bg": "/mern/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "REST API Development",
+    "points": [" 1. REST principles", " 2. CRUD operations", " 3. API testing"],
+    "bg": "/mern/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "MongoDB Basics",
+    "points": [
+      " 1. NoSQL concepts",
+      " 2. Collections & documents",
+      " 3. MongoDB Compass"
+    ],
+    "bg": "/mern/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Mongoose & Data Modeling",
+    "points": [
+      " 1. Schemas & models",
+      " 2. Data validation",
+      " 3. Relationships"
+    ],
+    "bg": "/mern/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Authentication & Authorization",
+    "points": [
+      " 1. User authentication",
+      " 2. JWT & cookies",
+      " 3. Role-based access control"
+    ],
+    "bg": "/mern/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Connecting Frontend & Backend",
+    "points": [
+      " 1. API integration",
+      " 2. Axios & fetch",
+      " 3. Error handling"
+    ],
+    "bg": "/mern/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "File Uploads & Media Handling",
+    "points": [
+      " 1. Multer basics",
+      " 2. Image uploads",
+      " 3. Cloud storage overview"
+    ],
+    "bg": "/mern/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "Application Security",
+    "points": [
+      " 1. Input validation",
+      " 2. Preventing common attacks",
+      " 3. Secure API practices"
+    ],
+    "bg": "/mern/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Performance Optimization",
+    "points": [
+      " 1. Backend optimization",
+      " 2. Frontend performance",
+      " 3. Caching strategies"
+    ],
+    "bg": "/mern/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Testing MERN Applications",
+    "points": [
+      " 1. Unit testing basics",
+      " 2. API testing",
+      " 3. Debugging techniques"
+    ],
+    "bg": "/mern/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "Deployment & DevOps Basics",
+    "points": [
+      " 1. Environment variables",
+      " 2. Hosting platforms",
+      " 3. CI/CD overview"
+    ],
+    "bg": "/mern/bg20.jpg"
+  },
+  {
+    "step": "21",
+    "title": "Real-World MERN Projects",
+    "points": [
+      " 1. Full-stack CRUD app",
+      " 2. Authentication-based app",
+      " 3. Dashboard application"
+    ],
+    "bg": "/mern/bg21.jpg"
+  },
+  {
+    "step": "22",
+    "title": "Career Preparation",
+    "points": [
+      " 1. Portfolio building",
+      " 2. Interview preparation",
+      " 3. Freelancing & job roadmap"
+    ],
+    "bg": "/mern/bg22.jpg"
+  }
+]

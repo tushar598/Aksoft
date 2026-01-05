@@ -1,0 +1,246 @@
+[
+  {
+    "features": [
+      {
+        "title": "Object-Oriented Power",
+        "description": "Design scalable systems using classes, inheritance, polymorphism, and abstraction."
+      },
+      {
+        "title": "Low-Level Memory Control",
+        "description": "Control memory precisely using pointers, stack vs heap allocation, and custom memory handling."
+      },
+      {
+        "title": "STL & Modern C++",
+        "description": "Use the Standard Template Library, smart pointers, lambdas, and modern C++ features effectively."
+      },
+      {
+        "title": "Performance-Critical Development",
+        "description": "Build high-performance applications used in game engines, trading systems, and system software."
+      },
+      {
+        "title": "Competitive Programming Ready",
+        "description": "Master C++ techniques commonly used in DSA, contests, and problem-solving environments."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Why C++ Programming?",
+    "points": [
+      " 1. High-performance language",
+      " 2. Object-oriented programming support",
+      " 3. Used in system & application development"
+    ],
+    "bg": "/card01.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Basic C++ Concepts",
+    "points": [
+      " 1. Data types, variables & constants",
+      " 2. Operators and expressions",
+      " 3. Input/output using cin & cout"
+    ],
+    "bg": "/c++basic.png"
+  },
+  {
+    "step": "03",
+    "title": "Control Flow Statements",
+    "points": [
+      " 1. Conditional statements (if, switch)",
+      " 2. Loops (for, while, do-while)",
+      " 3. Break and continue"
+    ],
+    "bg": "/roadmap/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Functions in C++",
+    "points": [
+      " 1. Function declaration & definition",
+      " 2. Call by value vs call by reference",
+      " 3. Inline and recursive functions"
+    ],
+    "bg": "/roadmap/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Arrays & Strings",
+    "points": [
+      " 1. One-dimensional & multi-dimensional arrays",
+      " 2. Character arrays and strings",
+      " 3. String manipulation functions"
+    ],
+    "bg": "/roadmap/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Pointers & Memory Basics",
+    "points": [
+      " 1. Pointer basics and syntax",
+      " 2. Pointer arithmetic",
+      " 3. Pointers with arrays and functions"
+    ],
+    "bg": "/roadmap/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Structures & Unions",
+    "points": [
+      " 1. Defining and using structures",
+      " 2. Nested structures",
+      " 3. Difference between structure and union"
+    ],
+    "bg": "/roadmap/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Classes & Objects",
+    "points": [
+      " 1. Class & object fundamentals",
+      " 2. Access specifiers",
+      " 3. Array of objects"
+    ],
+    "bg": "/c++class.png"
+  },
+  {
+    "step": "09",
+    "title": "Constructor & Destructor",
+    "points": [
+      " 1. Default, parameterized & copy constructors",
+      " 2. Constructor overloading",
+      " 3. Destructor lifecycle"
+    ],
+    "bg": "/roadmap/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Properties of OOP",
+    "points": [
+      " 1. Encapsulation & abstraction",
+      " 2. Static data members & functions",
+      " 3. Object-oriented design principles"
+    ],
+    "bg": "/roadmap/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Inheritance in C++",
+    "points": [
+      " 1. Single, multiple & multilevel inheritance",
+      " 2. Diamond problem & virtual inheritance",
+      " 3. Function overriding"
+    ],
+    "bg": "/roadmap/11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Polymorphism",
+    "points": [
+      " 1. Compile-time polymorphism",
+      " 2. Runtime polymorphism",
+      " 3. Virtual functions"
+    ],
+    "bg": "/roadmap/12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Operator Overloading",
+    "points": [
+      " 1. Overloading unary & binary operators",
+      " 2. Rules of operator overloading",
+      " 3. Practical use cases"
+    ],
+    "bg": "/roadmap/13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Templates",
+    "points": [
+      " 1. Function templates",
+      " 2. Class templates",
+      " 3. Template specialization"
+    ],
+    "bg": "/roadmap/14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Exception Handling",
+    "points": [
+      " 1. try, catch & throw",
+      " 2. Multiple catch blocks",
+      " 3. User-defined exceptions"
+    ],
+    "bg": "/roadmap/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "File Handling in C++",
+    "points": [
+      " 1. File streams (ifstream, ofstream)",
+      " 2. Reading and writing files",
+      " 3. Binary file handling"
+    ],
+    "bg": "/roadmap/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "STL (Standard Template Library)",
+    "points": [
+      " 1. Containers (vector, list, map)",
+      " 2. Iterators & algorithms",
+      " 3. STL use cases"
+    ],
+    "bg": "/roadmap/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Dynamic Memory Management",
+    "points": [
+      " 1. new and delete operators",
+      " 2. Memory leaks",
+      " 3. Smart pointers basics"
+    ],
+    "bg": "/roadmap/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Modern C++ (C++11 and Above)",
+    "points": [
+      " 1. Auto keyword & range-based loops",
+      " 2. Lambda expressions",
+      " 3. Move semantics"
+    ],
+    "bg": "/roadmap/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "Advanced C++ Concepts",
+    "points": [
+      " 1. Multithreading basics",
+      " 2. Concurrency and mutex",
+      " 3. Performance optimization"
+    ],
+    "bg": "/roadmap/bg20.jpg"
+  },
+  {
+    "step": "21",
+    "title": "C++ for Competitive Programming",
+    "points": [
+      " 1. Fast I/O techniques",
+      " 2. Time & space complexity",
+      " 3. Problem-solving patterns"
+    ],
+    "bg": "/roadmap/bg21.jpg"
+  },
+  {
+    "step": "22",
+    "title": "C++ in Real-World Applications",
+    "points": [
+      " 1. Game development basics",
+      " 2. System & embedded programming",
+      " 3. C++ in finance & AI"
+    ],
+    "bg": "/roadmap/bg22.jpg"
+  }
+]

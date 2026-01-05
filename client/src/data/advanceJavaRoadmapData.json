@@ -1,0 +1,172 @@
+[
+  {
+    "features": [
+      {
+        "title": "Enterprise-Level Development",
+        "description": "Learn how to build scalable and secure enterprise applications using Java EE technologies."
+      },
+      {
+        "title": "Backend & Web Services",
+        "description": "Develop RESTful and SOAP-based services for modern web and distributed systems."
+      },
+      {
+        "title": "Database Integration",
+        "description": "Work with JDBC and JPA to perform efficient database operations and ORM-based data handling."
+      },
+      {
+        "title": "Microservices Architecture",
+        "description": "Design and deploy microservices using Spring Boot with real-world architectural patterns."
+      },
+      {
+        "title": "Production-Ready Practices",
+        "description": "Apply testing, security, performance tuning, and DevOps concepts for real-world deployments."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Java EE Overview",
+    "points": [
+      " 1. Introduction to Java EE",
+      " 2. Java EE architecture",
+      " 3. Key components & APIs"
+    ],
+    "bg": "/advancejava/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Servlets & JSP",
+    "points": [
+      " 1. Servlet lifecycle",
+      " 2. JSP basics & directives",
+      " 3. Session management"
+    ],
+    "bg": "/advancejava/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Java Database Connectivity (JDBC)",
+    "points": [
+      " 1. JDBC architecture",
+      " 2. CRUD operations",
+      " 3. Connection pooling"
+    ],
+    "bg": "/advancejava/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Java Persistence API (JPA)",
+    "points": [" 1. ORM concepts", " 2. Entity mapping", " 3. JPQL basics"],
+    "bg": "/advancejava/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Enterprise JavaBeans (EJB)",
+    "points": [
+      " 1. EJB types (Session, Message-driven)",
+      " 2. EJB lifecycle",
+      " 3. Dependency injection"
+    ],
+    "bg": "/advancejava/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Java Security",
+    "points": [
+      " 1. Security basics",
+      " 2. Authentication & authorization",
+      " 3. Secure coding practices"
+    ],
+    "bg": "/advancejava/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Java Web Services",
+    "points": [
+      " 1. RESTful services",
+      " 2. SOAP services",
+      " 3. API documentation (Swagger)"
+    ],
+    "bg": "/advancejava/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Java Microservices",
+    "points": [
+      " 1. Microservices architecture",
+      " 2. Spring Boot basics",
+      " 3. API Gateway & Service Discovery"
+    ],
+    "bg": "/advancejava/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Java Testing",
+    "points": [
+      " 1. Unit testing (JUnit)",
+      " 2. Integration testing",
+      " 3. Test-driven development (TDD)"
+    ],
+    "bg": "/advancejava/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Java DevOps",
+    "points": [
+      " 1. CI/CD concepts",
+      " 2. Docker basics",
+      " 3. Kubernetes basics"
+    ],
+    "bg": "/advancejava/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Java Performance",
+    "points": [
+      " 1. Performance tuning techniques",
+      " 2. Profiling tools",
+      " 3. Garbage collection optimization"
+    ],
+    "bg": "/advancejava/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Java Security Best Practices",
+    "points": [
+      " 1. Secure coding guidelines",
+      " 2. Input validation techniques",
+      " 3. Error handling best practices"
+    ],
+    "bg": "/advancejava/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Java in Real-World Applications",
+    "points": [
+      " 1. Web development (Spring, JavaServer Faces)",
+      " 2. Enterprise applications (JEE)",
+      " 3. Microservices (Spring Boot, Docker)"
+    ],
+    "bg": "/advancejava/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Java for Competitive Programming",
+    "points": [
+      " 1. Fast I/O techniques",
+      " 2. Time & space complexity",
+      " 3. Problem-solving strategies"
+    ],
+    "bg": "/advancejava/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Java Best Practices",
+    "points": [
+      " 1. Code conventions (naming, formatting)",
+      " 2. Effective use of design patterns",
+      " 3. Writing clean & maintainable code"
+    ],
+    "bg": "/advancejava/bg15.jpg"
+  }
+]

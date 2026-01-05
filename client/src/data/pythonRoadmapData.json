@@ -1,0 +1,222 @@
+[
+  {
+    "features": [
+      {
+        "title": "Beginner-Friendly Syntax",
+        "description": "Python’s clean and readable syntax makes it easy to learn and ideal for beginners entering programming."
+      },
+      {
+        "title": "Versatile Ecosystem",
+        "description": "Build applications for web development, data science, machine learning, automation, and scripting."
+      },
+      {
+        "title": "Powerful Standard Library",
+        "description": "Use built-in modules and packages to handle files, data processing, networking, and more efficiently."
+      },
+      {
+        "title": "Object-Oriented & Functional Support",
+        "description": "Write modular and reusable code using OOP principles along with functional programming concepts."
+      },
+      {
+        "title": "Industry-Relevant Skills",
+        "description": "Gain skills widely used in real-world projects, startups, research, and top tech companies."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Why Python Programming?",
+    "points": [
+      " 1. Easy to learn & beginner-friendly",
+      " 2. High-level & interpreted language",
+      " 3. Widely used in AI, ML, Web & Automation"
+    ],
+    "bg": "/python/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Python Basics & Syntax",
+    "points": [
+      " 1. Python interpreter & execution flow",
+      " 2. Variables, keywords & indentation",
+      " 3. Comments & basic syntax rules"
+    ],
+    "bg": "/python/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Data Types & Variables",
+    "points": [
+      " 1. int, float, string & boolean",
+      " 2. Type casting",
+      " 3. Dynamic typing in Python"
+    ],
+    "bg": "/python/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Operators in Python",
+    "points": [
+      " 1. Arithmetic operators",
+      " 2. Logical & comparison operators",
+      " 3. Assignment & bitwise operators"
+    ],
+    "bg": "/python/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Control Flow Statements",
+    "points": [
+      " 1. if, elif & else",
+      " 2. Nested conditions",
+      " 3. Match-case (Python 3.10+)"
+    ],
+    "bg": "/python/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Loops in Python",
+    "points": [" 1. for loop", " 2. while loop", " 3. break, continue & pass"],
+    "bg": "/python/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Functions in Python",
+    "points": [
+      " 1. Defining & calling functions",
+      " 2. Arguments & return values",
+      " 3. Lambda functions"
+    ],
+    "bg": "/python/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Python Data Structures",
+    "points": [
+      " 1. Lists & list operations",
+      " 2. Tuples & sets",
+      " 3. Dictionaries"
+    ],
+    "bg": "/python/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Strings in Python",
+    "points": [
+      " 1. String creation & indexing",
+      " 2. String methods",
+      " 3. String formatting"
+    ],
+    "bg": "/python/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "File Handling",
+    "points": [
+      " 1. Reading & writing files",
+      " 2. File modes",
+      " 3. Working with CSV & JSON"
+    ],
+    "bg": "/python/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Exception Handling",
+    "points": [
+      " 1. try, except & finally",
+      " 2. Multiple exceptions",
+      " 3. Custom exceptions"
+    ],
+    "bg": "/python/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Object-Oriented Programming",
+    "points": [
+      " 1. Classes & objects",
+      " 2. Constructors & methods",
+      " 3. self keyword"
+    ],
+    "bg": "/python/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Inheritance & Polymorphism",
+    "points": [
+      " 1. Single & multiple inheritance",
+      " 2. Method overriding",
+      " 3. Polymorphism concepts"
+    ],
+    "bg": "/python/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Abstraction & Encapsulation",
+    "points": [
+      " 1. Abstract base classes",
+      " 2. Data hiding",
+      " 3. Property decorators"
+    ],
+    "bg": "/python/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Modules & Packages",
+    "points": [
+      " 1. Importing modules",
+      " 2. Built-in modules",
+      " 3. Creating custom packages"
+    ],
+    "bg": "/python/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "Virtual Environments & pip",
+    "points": [
+      " 1. venv & virtualenv",
+      " 2. pip install & requirements.txt",
+      " 3. Dependency management"
+    ],
+    "bg": "/python/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "Advanced Python Concepts",
+    "points": [
+      " 1. Decorators",
+      " 2. Generators & iterators",
+      " 3. Context managers"
+    ],
+    "bg": "/python/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Multithreading & Multiprocessing",
+    "points": [
+      " 1. threading module",
+      " 2. multiprocessing module",
+      " 3. GIL concept"
+    ],
+    "bg": "/python/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Python Performance & Best Practices",
+    "points": [
+      " 1. Code optimization techniques",
+      " 2. Time & space complexity",
+      " 3. Writing clean & readable code"
+    ],
+    "bg": "/python/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "Python in Real-World Applications",
+    "points": [
+      " 1. Web development (Django, Flask)",
+      " 2. Data science & machine learning",
+      " 3. Automation & scripting"
+    ],
+    "bg": "/python/bg20.jpg"
+  }
+]

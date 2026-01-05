@@ -1,0 +1,156 @@
+[
+  {
+    "features": [
+      {
+        "title": "Database Fundamentals",
+        "description": "Understand how data is stored, organized, and managed in database systems."
+      },
+      {
+        "title": "SQL & Query Mastery",
+        "description": "Write efficient SQL queries for data retrieval, insertion, updates, and deletion."
+      },
+      {
+        "title": "Normalization & Design",
+        "description": "Design optimized databases using normalization and ER modeling concepts."
+      },
+      {
+        "title": "Transactions & Indexing",
+        "description": "Learn ACID properties, indexing, and query optimization techniques."
+      },
+      {
+        "title": "Backend & Interview Ready",
+        "description": "Build strong DBMS concepts required for backend development and technical interviews."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Introduction to DBMS",
+    "points": [
+      " 1. What is a Database",
+      " 2. DBMS vs File System",
+      " 3. Advantages of DBMS"
+    ],
+    "bg": "/dbms/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Database Models",
+    "points": [
+      " 1. Hierarchical, Network & Relational models",
+      " 2. ER Model overview",
+      " 3. Concepts of tables, rows, and columns"
+    ],
+    "bg": "/dbms/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Relational Database Concepts",
+    "points": [
+      " 1. Keys: Primary, Foreign, Candidate",
+      " 2. Integrity constraints",
+      " 3. Normalization basics"
+    ],
+    "bg": "/dbms/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "SQL Basics",
+    "points": [
+      " 1. DDL, DML, DCL commands",
+      " 2. Creating and managing tables",
+      " 3. Basic SELECT queries"
+    ],
+    "bg": "/dbms/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Advanced SQL Queries",
+    "points": [
+      " 1. Joins: INNER, LEFT, RIGHT, FULL",
+      " 2. Aggregate functions",
+      " 3. Subqueries & nested queries"
+    ],
+    "bg": "/dbms/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Indexing & Views",
+    "points": [
+      " 1. Concept of indexing",
+      " 2. Types of indexes",
+      " 3. Views and virtual tables"
+    ],
+    "bg": "/dbms/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Normalization & Denormalization",
+    "points": [
+      " 1. 1NF, 2NF, 3NF, BCNF",
+      " 2. Advantages of normalization",
+      " 3. Denormalization for performance"
+    ],
+    "bg": "/dbms/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Transactions & Concurrency",
+    "points": [
+      " 1. ACID properties",
+      " 2. Transaction states",
+      " 3. Concurrency control & locking"
+    ],
+    "bg": "/dbms/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Database Security",
+    "points": [
+      " 1. User roles & privileges",
+      " 2. Authentication & authorization",
+      " 3. SQL injection prevention"
+    ],
+    "bg": "/dbms/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Backup & Recovery",
+    "points": [
+      " 1. Types of backups",
+      " 2. Recovery techniques",
+      " 3. Disaster recovery planning"
+    ],
+    "bg": "/dbms/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Stored Procedures & Triggers",
+    "points": [
+      " 1. Writing stored procedures",
+      " 2. Using triggers",
+      " 3. Advantages and use cases"
+    ],
+    "bg": "/dbms/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "NoSQL Databases Overview",
+    "points": [
+      " 1. Differences from relational DBs",
+      " 2. Types: Document, Key-Value, Columnar, Graph",
+      " 3. Use cases for NoSQL"
+    ],
+    "bg": "/dbms/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "DBMS Project & Practice",
+    "points": [
+      " 1. Design ER diagrams",
+      " 2. Implement a relational database",
+      " 3. Run advanced queries & transactions"
+    ],
+    "bg": "/dbms/bg13.jpg"
+  }
+]

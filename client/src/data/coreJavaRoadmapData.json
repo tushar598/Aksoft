@@ -1,0 +1,242 @@
+[
+  {
+    "features": [
+      {
+        "title": "Strong OOP Foundations",
+        "description": "Learn core object-oriented concepts like classes, objects, inheritance, polymorphism, and abstraction."
+      },
+      {
+        "title": "Platform Independence",
+        "description": "Understand Java’s Write Once, Run Anywhere philosophy powered by the JVM."
+      },
+      {
+        "title": "Robust Standard Library",
+        "description": "Use built-in Java APIs for collections, file handling, multithreading, and utilities."
+      },
+      {
+        "title": "Memory & JVM Understanding",
+        "description": "Gain insight into memory management, garbage collection, and JVM internals."
+      },
+      {
+        "title": "Industry-Ready Basics",
+        "description": "Build a solid base required for backend development, Android, and enterprise systems."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Why Java Programming?",
+    "points": [
+      " 1. Platform-independent (Write Once, Run Anywhere)",
+      " 2. Strong object-oriented principles",
+      " 3. Widely used in enterprise & backend systems"
+    ],
+    "bg": "/java/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Java Basics & Syntax",
+    "points": [
+      " 1. JVM, JRE & JDK overview",
+      " 2. Data types, variables & keywords",
+      " 3. Input/output using Scanner & BufferedReader"
+    ],
+    "bg": "/java/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Control Flow Statements",
+    "points": [
+      " 1. if-else & switch statements",
+      " 2. for, while & do-while loops",
+      " 3. break, continue & return"
+    ],
+    "bg": "/java/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Methods & Method Overloading",
+    "points": [
+      " 1. Method declaration & invocation",
+      " 2. Method overloading",
+      " 3. Pass by value concept"
+    ],
+    "bg": "/java/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Arrays & Strings",
+    "points": [
+      " 1. Single & multi-dimensional arrays",
+      " 2. String, StringBuilder & StringBuffer",
+      " 3. String manipulation methods"
+    ],
+    "bg": "/java/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Object-Oriented Fundamentals",
+    "points": [" 1. Classes & objects", " 2. Constructors", " 3. this keyword"],
+    "bg": "/java/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Inheritance in Java",
+    "points": [
+      " 1. extends keyword",
+      " 2. Method overriding",
+      " 3. super keyword"
+    ],
+    "bg": "/java/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Polymorphism",
+    "points": [
+      " 1. Compile-time polymorphism",
+      " 2. Runtime polymorphism",
+      " 3. Dynamic method dispatch"
+    ],
+    "bg": "/java/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Abstraction",
+    "points": [
+      " 1. Abstract classes",
+      " 2. Abstract methods",
+      " 3. Real-world abstraction examples"
+    ],
+    "bg": "/java/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Encapsulation",
+    "points": [
+      " 1. Access modifiers",
+      " 2. Getters & setters",
+      " 3. Data hiding"
+    ],
+    "bg": "/java/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Interfaces",
+    "points": [
+      " 1. Interface basics",
+      " 2. Multiple inheritance using interfaces",
+      " 3. Default & static methods"
+    ],
+    "bg": "/java/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Packages & Access Control",
+    "points": [
+      " 1. Built-in packages",
+      " 2. User-defined packages",
+      " 3. Package visibility rules"
+    ],
+    "bg": "/java/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Exception Handling",
+    "points": [
+      " 1. try, catch & finally",
+      " 2. Checked vs unchecked exceptions",
+      " 3. Custom exceptions"
+    ],
+    "bg": "/java/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Multithreading Basics",
+    "points": [
+      " 1. Thread lifecycle",
+      " 2. Creating threads (Thread & Runnable)",
+      " 3. Thread synchronization basics"
+    ],
+    "bg": "/java/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Java Collections Framework",
+    "points": [
+      " 1. List, Set & Map interfaces",
+      " 2. ArrayList, HashSet & HashMap",
+      " 3. Iterators & for-each loop"
+    ],
+    "bg": "/java/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "File Handling & I/O",
+    "points": [
+      " 1. File & FileReader/FileWriter",
+      " 2. Buffered streams",
+      " 3. Serialization basics"
+    ],
+    "bg": "/java/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "Java 8 Features",
+    "points": [
+      " 1. Lambda expressions",
+      " 2. Functional interfaces",
+      " 3. Stream API"
+    ],
+    "bg": "/java/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Annotations & Reflection",
+    "points": [
+      " 1. Built-in annotations",
+      " 2. Custom annotations",
+      " 3. Reflection API"
+    ],
+    "bg": "/java/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "JVM Internals & Memory Model",
+    "points": [
+      " 1. Heap, stack & method area",
+      " 2. Garbage collection",
+      " 3. Performance tuning basics"
+    ],
+    "bg": "/java/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "Java Best Practices",
+    "points": [
+      " 1. Clean code principles",
+      " 2. Design patterns basics",
+      " 3. Secure coding practices"
+    ],
+    "bg": "/java/bg20.jpg"
+  },
+  {
+    "step": "21",
+    "title": "Java for Competitive Programming",
+    "points": [
+      " 1. Fast I/O techniques",
+      " 2. Time & space complexity",
+      " 3. Problem-solving strategies"
+    ],
+    "bg": "/java/bg21.jpg"
+  },
+  {
+    "step": "22",
+    "title": "Java in Real-World Applications",
+    "points": [
+      " 1. Backend development overview",
+      " 2. Android development basics",
+      " 3. Enterprise applications"
+    ],
+    "bg": "/java/bg22.jpg"
+  }
+]

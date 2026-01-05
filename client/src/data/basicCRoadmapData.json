@@ -1,0 +1,218 @@
+[
+  {
+    "features": [
+      {
+        "title": "Strong Programming Foundations",
+        "description": "Understand core programming concepts that form the base of modern languages like C++, Java, and Rust."
+      },
+      {
+        "title": "Low-Level Memory Access",
+        "description": "Gain deep insight into memory management using pointers, stack, heap, and dynamic allocation."
+      },
+      {
+        "title": "High Performance & Efficiency",
+        "description": "Write fast and optimized programs suitable for system-level and embedded applications."
+      },
+      {
+        "title": "Procedural Programming Mastery",
+        "description": "Learn structured and procedural programming using functions, loops, and control statements."
+      },
+      {
+        "title": "System & OS Relevance",
+        "description": "Build skills essential for operating systems, compilers, drivers, and low-level software."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Why Learn C Programming?",
+    "points": [
+      " 1. Foundation of modern programming languages",
+      " 2. Fast & efficient language",
+      " 3. Widely used in system programming"
+    ],
+    "bg": "/c/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "History & Structure of C",
+    "points": [
+      " 1. History of C language",
+      " 2. Structure of a C program",
+      " 3. Compilation process"
+    ],
+    "bg": "/c/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Basic Syntax & Keywords",
+    "points": [
+      " 1. Tokens & keywords",
+      " 2. Identifiers & constants",
+      " 3. Comments & coding standards"
+    ],
+    "bg": "/c/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Data Types & Variables",
+    "points": [
+      " 1. Basic & derived data types",
+      " 2. Variable declaration",
+      " 3. Type modifiers"
+    ],
+    "bg": "/c/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Input & Output Functions",
+    "points": [
+      " 1. printf() & scanf()",
+      " 2. Format specifiers",
+      " 3. getchar() & putchar()"
+    ],
+    "bg": "/c/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Operators in C",
+    "points": [
+      " 1. Arithmetic operators",
+      " 2. Relational & logical operators",
+      " 3. Bitwise operators"
+    ],
+    "bg": "/c/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Control Statements",
+    "points": [
+      " 1. if, if-else & nested if",
+      " 2. switch-case",
+      " 3. goto statement"
+    ],
+    "bg": "/c/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Loops in C",
+    "points": [" 1. for loop", " 2. while loop", " 3. do-while loop"],
+    "bg": "/c/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Functions in C",
+    "points": [
+      " 1. Function declaration & definition",
+      " 2. Call by value",
+      " 3. Recursive functions"
+    ],
+    "bg": "/c/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Arrays",
+    "points": [
+      " 1. One-dimensional arrays",
+      " 2. Multi-dimensional arrays",
+      " 3. Array initialization"
+    ],
+    "bg": "/c/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Strings in C",
+    "points": [
+      " 1. String handling functions",
+      " 2. strlen(), strcpy(), strcmp()",
+      " 3. String input/output"
+    ],
+    "bg": "/c/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Pointers Basics",
+    "points": [
+      " 1. Pointer declaration",
+      " 2. Address & dereference operators",
+      " 3. Pointer arithmetic"
+    ],
+    "bg": "/c/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Pointers with Arrays & Functions",
+    "points": [
+      " 1. Array of pointers",
+      " 2. Pointers as function arguments",
+      " 3. Pointer to pointer"
+    ],
+    "bg": "/c/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Structures",
+    "points": [
+      " 1. Defining structures",
+      " 2. Accessing structure members",
+      " 3. Structures & functions"
+    ],
+    "bg": "/c/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Unions & Enums",
+    "points": [
+      " 1. Union concept",
+      " 2. Difference between structure & union",
+      " 3. Enumeration data type"
+    ],
+    "bg": "/c/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "Dynamic Memory Allocation",
+    "points": [
+      " 1. malloc(), calloc()",
+      " 2. realloc() & free()",
+      " 3. Memory management best practices"
+    ],
+    "bg": "/c/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "File Handling in C",
+    "points": [
+      " 1. File pointers",
+      " 2. File modes",
+      " 3. Reading & writing files"
+    ],
+    "bg": "/c/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Preprocessor Directives",
+    "points": [
+      " 1. #include & #define",
+      " 2. Macros",
+      " 3. Conditional compilation"
+    ],
+    "bg": "/c/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Command Line Arguments",
+    "points": [" 1. argc & argv", " 2. Passing arguments", " 3. Use cases"],
+    "bg": "/c/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "Debugging & Best Practices",
+    "points": [
+      " 1. Common errors in C",
+      " 2. Debugging techniques",
+      " 3. Writing efficient C programs"
+    ],
+    "bg": "/c/bg20.jpg"
+  }
+]

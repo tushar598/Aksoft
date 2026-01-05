@@ -1,0 +1,226 @@
+[
+  {
+    "features": [
+      {
+        "title": "Problem-Solving Mindset",
+        "description": "Develop logical thinking and structured problem-solving skills."
+      },
+      {
+        "title": "Core Data Structures",
+        "description": "Master arrays, linked lists, stacks, queues, trees, graphs, and hash tables."
+      },
+      {
+        "title": "Algorithmic Techniques",
+        "description": "Learn sorting, searching, recursion, greedy algorithms, and dynamic programming."
+      },
+      {
+        "title": "Time & Space Optimization",
+        "description": "Analyze and optimize solutions using time and space complexity concepts."
+      },
+      {
+        "title": "Interview & Competitive Ready",
+        "description": "Prepare effectively for coding interviews, contests, and real-world problem solving."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Introduction to DSA",
+    "points": [
+      " 1. What is DSA",
+      " 2. Importance in programming & interviews",
+      " 3. Time and space complexity basics"
+    ],
+    "bg": "/dsa/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "Mathematical Foundations",
+    "points": [
+      " 1. Big O, Big Theta, Big Omega notations",
+      " 2. Logarithms, summations, and series",
+      " 3. Recurrence relations"
+    ],
+    "bg": "/dsa/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Arrays",
+    "points": [
+      " 1. Basics & memory layout",
+      " 2. Operations: insert, delete, search",
+      " 3. Two pointers & sliding window technique"
+    ],
+    "bg": "/dsa/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Strings",
+    "points": [
+      " 1. String operations",
+      " 2. Pattern matching algorithms",
+      " 3. Palindromes & substrings"
+    ],
+    "bg": "/dsa/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Linked Lists",
+    "points": [
+      " 1. Singly & doubly linked lists",
+      " 2. Circular linked lists",
+      " 3. Operations & use cases"
+    ],
+    "bg": "/dsa/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Stacks & Queues",
+    "points": [
+      " 1. Stack operations & applications",
+      " 2. Queue types: normal, circular, priority",
+      " 3. Deque & double-ended operations"
+    ],
+    "bg": "/dsa/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Recursion & Backtracking",
+    "points": [
+      " 1. Recursive thinking",
+      " 2. Base case & recursive case",
+      " 3. Backtracking problems"
+    ],
+    "bg": "/dsa/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Hashing",
+    "points": [
+      " 1. Hash tables & hash functions",
+      " 2. Collision resolution techniques",
+      " 3. Applications in problem solving"
+    ],
+    "bg": "/dsa/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Trees",
+    "points": [
+      " 1. Binary trees & binary search trees",
+      " 2. Tree traversals",
+      " 3. Height, depth & balanced trees"
+    ],
+    "bg": "/dsa/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "Heaps & Priority Queues",
+    "points": [
+      " 1. Min heap & max heap",
+      " 2. Heap operations",
+      " 3. Applications in algorithms"
+    ],
+    "bg": "/dsa/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Graphs",
+    "points": [
+      " 1. Graph representations (adjacency list/matrix)",
+      " 2. BFS & DFS traversals",
+      " 3. Weighted & unweighted graphs"
+    ],
+    "bg": "/dsa/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Graph Algorithms",
+    "points": [
+      " 1. Dijkstra & Bellman-Ford",
+      " 2. Minimum Spanning Tree (Kruskal & Prim)",
+      " 3. Topological sorting"
+    ],
+    "bg": "/dsa/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Sorting Algorithms",
+    "points": [
+      " 1. Bubble, Selection, Insertion",
+      " 2. Merge Sort & Quick Sort",
+      " 3. Heap Sort & Counting Sort"
+    ],
+    "bg": "/dsa/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Searching Algorithms",
+    "points": [
+      " 1. Linear search",
+      " 2. Binary search & variants",
+      " 3. Search in rotated & sorted arrays"
+    ],
+    "bg": "/dsa/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Dynamic Programming",
+    "points": [
+      " 1. DP basics & memoization",
+      " 2. Classic problems (knapsack, LIS, etc.)",
+      " 3. State optimization techniques"
+    ],
+    "bg": "/dsa/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "Greedy Algorithms",
+    "points": [
+      " 1. Greedy approach basics",
+      " 2. Activity selection & coin change",
+      " 3. Fractional vs 0/1 knapsack"
+    ],
+    "bg": "/dsa/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "Advanced Data Structures",
+    "points": [
+      " 1. Trie, Segment Tree, Fenwick Tree",
+      " 2. Disjoint Set Union (DSU)",
+      " 3. Applications in problem solving"
+    ],
+    "bg": "/dsa/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Problem Solving Techniques",
+    "points": [
+      " 1. Two pointers & sliding window",
+      " 2. Divide & conquer",
+      " 3. Bit manipulation tricks"
+    ],
+    "bg": "/dsa/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Competitive Programming Practice",
+    "points": [
+      " 1. Standard problem sets",
+      " 2. Online judges & platforms",
+      " 3. Optimizing for time & space"
+    ],
+    "bg": "/dsa/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "DSA Project & Interview Prep",
+    "points": [
+      " 1. Build algorithmic projects",
+      " 2. Mock interviews & coding rounds",
+      " 3. Tips for efficient problem solving"
+    ],
+    "bg": "/dsa/bg20.jpg"
+  }
+]

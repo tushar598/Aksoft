@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef , useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useCourseFilter from "../../hooks/useCourseFilter";
 
@@ -51,6 +51,15 @@ const HeroSection = () => {
       swipeLock.current = false;
     }, 700); // matches animation duration
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      paginate(1);
+    }, 5000); // 5 seconds
+
+    return () => clearInterval(interval);
+  }, [index]);
+
 
   const handleLearnMore = (filter) => {
     setFilter(filter);

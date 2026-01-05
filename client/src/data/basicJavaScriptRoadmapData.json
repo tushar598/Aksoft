@@ -1,0 +1,222 @@
+[
+  {
+    "features": [
+      {
+        "title": "Core JavaScript Mastery",
+        "description": "Learn variables, data types, operators, expressions, and control flow to build a strong JS foundation."
+      },
+      {
+        "title": "Functions & Scope",
+        "description": "Understand function declarations, expressions, arrow functions, closures, and scoping rules."
+      },
+      {
+        "title": "DOM & Event Handling",
+        "description": "Manipulate the DOM, handle events, and create interactive web pages using JavaScript."
+      },
+      {
+        "title": "Asynchronous JavaScript",
+        "description": "Work with callbacks, promises, and async/await for handling asynchronous operations."
+      },
+      {
+        "title": "Modern JS Features",
+        "description": "Use ES6+ features like destructuring, spread/rest operators, template literals, and modules effectively."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Why Learn JavaScript?",
+    "points": [
+      " 1. Language of the web",
+      " 2. Runs in all modern browsers",
+      " 3. Used for frontend, backend & mobile apps"
+    ],
+    "bg": "/javascript/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "JavaScript History & Basics",
+    "points": [
+      " 1. History of JavaScript",
+      " 2. How JavaScript works in the browser",
+      " 3. JavaScript engines overview"
+    ],
+    "bg": "/javascript/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "Variables & Data Types",
+    "points": [
+      " 1. var, let & const",
+      " 2. Primitive & non-primitive data types",
+      " 3. typeof operator"
+    ],
+    "bg": "/javascript/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Operators & Expressions",
+    "points": [
+      " 1. Arithmetic & assignment operators",
+      " 2. Comparison & logical operators",
+      " 3. Ternary operator"
+    ],
+    "bg": "/javascript/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "Control Flow Statements",
+    "points": [
+      " 1. if, else if & switch",
+      " 2. for, while & do-while loops",
+      " 3. break & continue"
+    ],
+    "bg": "/javascript/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "Functions in JavaScript",
+    "points": [
+      " 1. Function declaration & expression",
+      " 2. Arrow functions",
+      " 3. Parameters & return values"
+    ],
+    "bg": "/javascript/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "Arrays",
+    "points": [
+      " 1. Creating & accessing arrays",
+      " 2. Array methods (push, pop, map)",
+      " 3. Iteration techniques"
+    ],
+    "bg": "/javascript/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Objects",
+    "points": [
+      " 1. Object literals",
+      " 2. Accessing object properties",
+      " 3. Methods & this keyword"
+    ],
+    "bg": "/javascript/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "Strings & Template Literals",
+    "points": [
+      " 1. String methods",
+      " 2. Template literals",
+      " 3. String interpolation"
+    ],
+    "bg": "/javascript/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "DOM Manipulation",
+    "points": [
+      " 1. Selecting DOM elements",
+      " 2. Modifying HTML & CSS",
+      " 3. Event handling"
+    ],
+    "bg": "/javascript/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "Events",
+    "points": [
+      " 1. Mouse & keyboard events",
+      " 2. Event listeners",
+      " 3. Event bubbling & capturing"
+    ],
+    "bg": "/javascript/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Scope & Hoisting",
+    "points": [
+      " 1. Global & local scope",
+      " 2. Hoisting behavior",
+      " 3. Block scope with let & const"
+    ],
+    "bg": "/javascript/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "Closures",
+    "points": [
+      " 1. Understanding closures",
+      " 2. Practical use cases",
+      " 3. Memory implications"
+    ],
+    "bg": "/javascript/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Asynchronous JavaScript",
+    "points": [" 1. Callbacks", " 2. Promises", " 3. async & await"],
+    "bg": "/javascript/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "Error Handling",
+    "points": [
+      " 1. try, catch & finally",
+      " 2. Custom errors",
+      " 3. Debugging basics"
+    ],
+    "bg": "/javascript/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "ES6+ Features",
+    "points": [
+      " 1. Destructuring",
+      " 2. Spread & rest operators",
+      " 3. Modules (import/export)"
+    ],
+    "bg": "/javascript/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "Working with JSON",
+    "points": [
+      " 1. JSON format",
+      " 2. JSON.parse() & JSON.stringify()",
+      " 3. Data exchange basics"
+    ],
+    "bg": "/javascript/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Browser Storage",
+    "points": [
+      " 1. localStorage",
+      " 2. sessionStorage",
+      " 3. Cookies overview"
+    ],
+    "bg": "/javascript/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Basic Security Concepts",
+    "points": [
+      " 1. XSS basics",
+      " 2. Secure coding practices",
+      " 3. Avoiding common vulnerabilities"
+    ],
+    "bg": "/javascript/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "JavaScript Best Practices",
+    "points": [
+      " 1. Clean & readable code",
+      " 2. Performance tips",
+      " 3. Real-world coding standards"
+    ],
+    "bg": "/javascript/bg20.jpg"
+  }
+]

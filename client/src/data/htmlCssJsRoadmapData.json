@@ -1,0 +1,238 @@
+[
+  {
+    "features": [
+      {
+        "title": "Web Development Foundations",
+        "description": "Learn how the web works by mastering HTML structure, CSS styling, and JavaScript logic."
+      },
+      {
+        "title": "Responsive UI Design",
+        "description": "Create mobile-first, responsive layouts using modern CSS techniques."
+      },
+      {
+        "title": "Interactive Web Pages",
+        "description": "Add interactivity and dynamic behavior using JavaScript and DOM manipulation."
+      },
+      {
+        "title": "Clean & Semantic Code",
+        "description": "Write accessible, semantic, and maintainable frontend code."
+      },
+      {
+        "title": "Frontend Career Ready",
+        "description": "Build a strong base required for React, frontend frameworks, and UI development roles."
+      }
+    ]
+  },
+  {
+    "step": "01",
+    "title": "Introduction to Web Fundamentals",
+    "points": [
+      " 1. How the web works",
+      " 2. What is HTML, CSS & JavaScript",
+      " 3. Frontend developer role"
+    ],
+    "bg": "/frontend/bg1.jpg"
+  },
+  {
+    "step": "02",
+    "title": "HTML Basics",
+    "points": [
+      " 1. HTML document structure",
+      " 2. Common tags & attributes",
+      " 3. Headings, paragraphs & links"
+    ],
+    "bg": "/frontend/bg2.jpg"
+  },
+  {
+    "step": "03",
+    "title": "HTML Forms & Media",
+    "points": [
+      " 1. Forms & input elements",
+      " 2. Images, audio & video",
+      " 3. Tables & lists"
+    ],
+    "bg": "/frontend/bg3.jpg"
+  },
+  {
+    "step": "04",
+    "title": "Semantic HTML",
+    "points": [
+      " 1. Semantic elements",
+      " 2. Accessibility basics",
+      " 3. SEO-friendly structure"
+    ],
+    "bg": "/frontend/bg4.jpg"
+  },
+  {
+    "step": "05",
+    "title": "CSS Basics",
+    "points": [
+      " 1. CSS syntax & selectors",
+      " 2. Colors, fonts & units",
+      " 3. Styling text & elements"
+    ],
+    "bg": "/frontend/bg5.jpg"
+  },
+  {
+    "step": "06",
+    "title": "CSS Box Model",
+    "points": [
+      " 1. Margin, border & padding",
+      " 2. Width & height",
+      " 3. Box sizing"
+    ],
+    "bg": "/frontend/bg6.jpg"
+  },
+  {
+    "step": "07",
+    "title": "CSS Layouts",
+    "points": [
+      " 1. Display & position",
+      " 2. Flexbox fundamentals",
+      " 3. CSS Grid basics"
+    ],
+    "bg": "/frontend/bg7.jpg"
+  },
+  {
+    "step": "08",
+    "title": "Responsive Design",
+    "points": [
+      " 1. Media queries",
+      " 2. Mobile-first design",
+      " 3. Responsive units"
+    ],
+    "bg": "/frontend/bg8.jpg"
+  },
+  {
+    "step": "09",
+    "title": "CSS Transitions & Animations",
+    "points": [
+      " 1. Transitions",
+      " 2. Keyframe animations",
+      " 3. Transform properties"
+    ],
+    "bg": "/frontend/bg9.jpg"
+  },
+  {
+    "step": "10",
+    "title": "JavaScript Basics",
+    "points": [
+      " 1. Variables & data types",
+      " 2. Operators & conditions",
+      " 3. Loops"
+    ],
+    "bg": "/frontend/bg10.jpg"
+  },
+  {
+    "step": "11",
+    "title": "JavaScript Functions",
+    "points": [
+      " 1. Function declaration & expression",
+      " 2. Arrow functions",
+      " 3. Scope & hoisting"
+    ],
+    "bg": "/frontend/bg11.jpg"
+  },
+  {
+    "step": "12",
+    "title": "Arrays & Objects",
+    "points": [
+      " 1. Array methods",
+      " 2. Objects & properties",
+      " 3. Iteration techniques"
+    ],
+    "bg": "/frontend/bg12.jpg"
+  },
+  {
+    "step": "13",
+    "title": "DOM Manipulation",
+    "points": [
+      " 1. Selecting elements",
+      " 2. Changing content & styles",
+      " 3. Creating elements dynamically"
+    ],
+    "bg": "/frontend/bg13.jpg"
+  },
+  {
+    "step": "14",
+    "title": "Events Handling",
+    "points": [
+      " 1. Event listeners",
+      " 2. Mouse & keyboard events",
+      " 3. Event bubbling"
+    ],
+    "bg": "/frontend/bg14.jpg"
+  },
+  {
+    "step": "15",
+    "title": "JavaScript ES6+ Features",
+    "points": [
+      " 1. let & const",
+      " 2. Destructuring",
+      " 3. Spread & rest operators"
+    ],
+    "bg": "/frontend/bg15.jpg"
+  },
+  {
+    "step": "16",
+    "title": "Asynchronous JavaScript",
+    "points": [" 1. Callbacks", " 2. Promises", " 3. async & await"],
+    "bg": "/frontend/bg16.jpg"
+  },
+  {
+    "step": "17",
+    "title": "Working with APIs",
+    "points": [" 1. Fetch API", " 2. JSON data handling", " 3. Error handling"],
+    "bg": "/frontend/bg17.jpg"
+  },
+  {
+    "step": "18",
+    "title": "Browser Storage",
+    "points": [
+      " 1. LocalStorage",
+      " 2. SessionStorage",
+      " 3. Practical use cases"
+    ],
+    "bg": "/frontend/bg18.jpg"
+  },
+  {
+    "step": "19",
+    "title": "Frontend Best Practices",
+    "points": [
+      " 1. Clean code",
+      " 2. Folder structure",
+      " 3. Reusable components"
+    ],
+    "bg": "/frontend/bg19.jpg"
+  },
+  {
+    "step": "20",
+    "title": "Mini Projects",
+    "points": [
+      " 1. Responsive landing page",
+      " 2. Interactive form",
+      " 3. DOM-based app"
+    ],
+    "bg": "/frontend/bg20.jpg"
+  },
+  {
+    "step": "21",
+    "title": "Real-World Projects",
+    "points": [
+      " 1. Portfolio website",
+      " 2. Weather app",
+      " 3. To-do application"
+    ],
+    "bg": "/frontend/bg21.jpg"
+  },
+  {
+    "step": "22",
+    "title": "Next Steps in Frontend",
+    "points": [
+      " 1. Learn a frontend framework",
+      " 2. Version control basics",
+      " 3. Career roadmap"
+    ],
+    "bg": "/frontend/bg22.jpg"
+  }
+]
