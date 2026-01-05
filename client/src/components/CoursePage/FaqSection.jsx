@@ -66,7 +66,7 @@ const FaqSection = () => {
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl
           "
         >
-          The Services We Provide
+          FAQ Section
         </h1>
       </div>
 

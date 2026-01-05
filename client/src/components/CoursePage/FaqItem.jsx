@@ -113,7 +113,7 @@ const FaqItem = ({ service, isActive, onActivate }) => {
           <h2
             ref={leftTitleRef}
             className="
-              font-bold ml-1 tracking-tight text-white
+              font-bold  tracking-tight text-white
               text-2xl sm:text-3xl md:text-4xl lg:text-4xl
               leading-snug 
             "

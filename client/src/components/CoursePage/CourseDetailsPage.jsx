@@ -206,7 +206,7 @@ export default function MacBookAirShowcase() {
               key={i}
               variants={fadeInUp}
               whileHover={{ scale: 1.05 }}
-              className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition-all duration-300 hover:border-[#df2771]/40 hover:shadow-[0_0_50px_-10px_rgba(250,75,55,0.4)]"
+              className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition-all duration-300  hover:shadow-[0_0_50px_-10px_rgba(255,255,255,0.4)]"
             >
               <h3 className="text-xl font-bold mb-3 text-white">
                 {feat.title}
