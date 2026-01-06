@@ -2,10 +2,10 @@ import React from "react";
 
 const products = [
   {
-    name: "Sakshi Sharma",
-    tag: "Web Developer",
-    price: "₹13 LPA",
-    image: "/student03.png",
+    name: "Tushar Singh Chouhan",
+    tag: "Web-3 Developer",
+    price: "₹1.3 Cr",
+    image: "/tushar.png",
   },
   {
     name: "Shivani Nigam",
@@ -67,6 +67,7 @@ const ProductScrollSection = () => {
                 rounded-[24px]
                 overflow-hidden
                 shadow-xl
+                bg-gradient-to-t from-[#fa4b37]/[0.9] to-[#df2771]/[0.9] 
                 cursor-pointer
               "
             >
@@ -85,7 +86,7 @@ const ProductScrollSection = () => {
                 loading="lazy"
               />
 
-                {/* DARK FADE FOR TEXT READABILITY */}
+              {/* DARK FADE FOR TEXT READABILITY */}
               <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/50 via-black/20 to-transparent lg:bg-none lg:hover:bg-gradient-to-t" />
 
               {/* TEXT CONTENT */}
