@@ -5,7 +5,6 @@ export const cppFaqData = [
     title: "What is C++?",
     description:
       "C++ is a powerful general-purpose programming language that supports procedural, object-oriented, and generic programming. It is widely used for system/software development, game development, and performance-critical applications.",
-    imageUrl: "https://picsum.photos/id/101/600/400", // Tech / programming feel
   },
   {
     id: "f2",
@@ -13,7 +12,6 @@ export const cppFaqData = [
     title: "What are the key features of C++?",
     description:
       "C++ offers features like object-oriented programming, strong type checking, memory management, templates for generic programming, and support for low-level system manipulation, making it versatile and efficient.",
-    imageUrl: "https://picsum.photos/id/102/600/400", // Abstract/Code vibe
   },
   {
     id: "f3",
@@ -21,7 +19,6 @@ export const cppFaqData = [
     title: "What is the difference between C and C++?",
     description:
       "C is a procedural programming language, whereas C++ is an extension of C that adds object-oriented programming features like classes and inheritance. C++ also provides stronger type safety and supports abstraction.",
-    imageUrl: "https://picsum.photos/id/103/600/400", // Computer/Code theme
   },
   {
     id: "f4",
@@ -29,7 +26,6 @@ export const cppFaqData = [
     title: "What are pointers in C++?",
     description:
       "Pointers are variables that store memory addresses of other variables. They are powerful tools in C++ for dynamic memory management, array manipulation, and for passing variables efficiently to functions.",
-    imageUrl: "https://picsum.photos/id/104/600/400", // Abstract tech
   },
   {
     id: "f5",
@@ -37,6 +33,5 @@ export const cppFaqData = [
     title: "What is the use of the STL in C++?",
     description:
       "The Standard Template Library (STL) in C++ provides a collection of template classes and functions, such as vectors, lists, queues, and algorithms, to simplify common data structures and operations efficiently.",
-    imageUrl: "https://picsum.photos/id/105/600/400", // Programming / data structures
   },
 ];

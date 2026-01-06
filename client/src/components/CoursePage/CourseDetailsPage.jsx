@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState , useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "../HomePage/Footer";
@@ -14,6 +14,16 @@ import mernStackRoadmapData from "../../data/mernStackRoadmapData.json";
 import dbmsRoadmapData from "../../data/dbmsRoadmapData.json";
 import dsaRoadmapData from "../../data/dsaRoadmapData.json";
 import FaqSection from "./FaqSection";
+import { cppFaqData } from "../../data/faqData/cppfaq";
+import { advancedJavaFaqData } from "../../data/faqData/advancedJavaFaqData";
+import { cFaqData } from "../../data/faqData/cFaqData";
+import { dbmsFaqData } from "../../data/faqData/dbmsFaqData";
+import { dsaFaqData } from "../../data/faqData/dsaFaqData";
+import { mernFaqData } from "../../data/faqData/mernFaqData";
+import { htmlCssJsFaqData } from "../../data/faqData/htmlCssJsFaqData";
+import { pythonFaqData } from "../../data/faqData/pythonFaqData";
+import { coreJavaFaqData } from "../../data/faqData/coreJavaFaqData";
+import { jsFaqData } from "../../data/faqData/jsFaqData";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 50 },
@@ -35,6 +45,7 @@ const CourseRoadmapData = {
 
 export default function MacBookAirShowcase() {
   const { course } = useParams();
+  const [faqData, setFaqData] = useState(cppFaqData);
   let courseTitle = course || "cpp";
 
   const activeRoadmapData =
@@ -96,6 +107,30 @@ export default function MacBookAirShowcase() {
           "C++ Programming",
           "This course covers C++ programming from basics to intermediate concepts, including object-oriented programming, memory management, STL, and performance-oriented coding. It is ideal for competitive programming and system-level development.",
         ];
+
+  useEffect(() => {
+    if (course === "cpp") {
+      setFaqData(cppFaqData);
+    } else if (course === "corejava") {
+      setFaqData(coreJavaFaqData);
+    } else if (course === "pythonbasics") {
+      setFaqData(pythonFaqData);
+    } else if (course === "advancedjava") {
+      setFaqData(advancedJavaFaqData);
+    } else if (course === "basicc") {
+      setFaqData(cFaqData);
+    } else if (course === "basicjavascript") {
+      setFaqData(jsFaqData);
+    } else if (course === "htmlcssjs") {
+      setFaqData(htmlCssJsFaqData);
+    } else if (course === "mernstack") {
+      setFaqData(mernFaqData);
+    } else if (course === "dbms") {
+      setFaqData(dbmsFaqData);
+    } else if (course === "dsafoundations") {
+      setFaqData(dsaFaqData);
+    }
+  }, [course]);
 
   return (
     <div className="bg-white text-gray-900 overflow-x-hidden">
@@ -220,7 +255,7 @@ export default function MacBookAirShowcase() {
       </section>
 
       <section>
-        <FaqSection />
+        <FaqSection FaqData={faqData} />
       </section>
 
       <section>

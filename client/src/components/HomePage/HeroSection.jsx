@@ -2,6 +2,7 @@ import { useState, useRef , useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useCourseFilter from "../../hooks/useCourseFilter";
 
+
 const slides = [
   {
     title: "Foundation ",
@@ -77,7 +78,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative h-[800px] overflow-hidden"
+      className="relative h-[800px] md:h-[1000px] lg:h-[800px]"
       onWheel={handleWheel} // 🔹 NEW
     >
       <AnimatePresence initial={false} custom={direction}>
@@ -107,7 +108,7 @@ const HeroSection = () => {
           }}
         >
           {/* TEXT */}
-          <div className="flex-1 text-center lg:text-left space-y-4 max-w-xl">
+          <div className="flex-1  text-center lg:text-left space-y-4 max-w-4xl">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold">
               {slides[index].title}
             </h1>
@@ -118,7 +119,7 @@ const HeroSection = () => {
 
             <p className="text-gray-500">{slides[index].desc}</p>
 
-            <div className="flex justify-center lg:justify-start gap-4 pt-4">
+            <div className="flex justify-center lg:justify-start gap-1 pt-4">
               <button
                 onClick={() => handleLearnMore(slides[index].link)}
                 className="bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white px-6 py-2 rounded-full"
@@ -126,9 +127,7 @@ const HeroSection = () => {
                 Learn more
               </button>
 
-              <button className="border border-[#df2771] text-[#fa4b37] px-6 py-2 rounded-full">
-                Try it free
-              </button>
+          
             </div>
           </div>
 

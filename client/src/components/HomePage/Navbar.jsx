@@ -1,11 +1,13 @@
 import { useState } from "react";
 import useScrollSpy from "../../hooks/useScrollSpy";
+import { Link, useNavigate } from "react-router-dom";
 import { scrollToSection } from "../../utils/scrollToSection";
-
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenValue, setIsOpenValue] = useState("");
+  const navigate = useNavigate();
 
   // 👇 ADD scroll spy hook
   const activeSection = useScrollSpy([
@@ -15,6 +17,19 @@ export default function Navbar() {
     "about_section",
     "footer-contact",
   ]);
+
+  function doNavigation(sectionId) {
+    if (sectionId === "home") {
+      navigate("/");
+      setIsOpen(false);
+      setIsOpenValue("");
+    }
+    if (sectionId === "placement_section") {
+      navigate("/placement");
+      setIsOpen(true);
+      setIsOpenValue("placement_section");
+    }
+  }
 
   return (
     <>
@@ -27,7 +42,9 @@ export default function Navbar() {
             <div className="flex items-center ">
               <img src="/aksoft.png" alt="logo" className="w-8 h-8" />
               <div>
-                <a href="/"className="font-bold text-3xl">ksoft</a>
+                <a href="/" className="font-bold text-3xl">
+                  ksoft
+                </a>
               </div>
             </div>
 
@@ -43,10 +60,15 @@ export default function Navbar() {
                 ].map(([label, sectionId]) => (
                   <li key={label}>
                     <button
-                      onClick={() => scrollToSection(sectionId)}
+                      onClick={() => {
+                        doNavigation(sectionId);
+                        scrollToSection(sectionId);
+                      }}
                       className={`relative text-base font-medium transition
                         ${
-                          activeSection === sectionId
+                          isOpen && isOpenValue === sectionId
+                            ? "text-[#fa4b37] after:scale-x-100"
+                            : !isOpen && activeSection === sectionId
                             ? "text-[#fa4b37] after:scale-x-100"
                             : "text-slate-700 after:scale-x-0"
                         }
@@ -109,6 +131,7 @@ export default function Navbar() {
               <li key={label}>
                 <button
                   onClick={() => {
+                    doNavigation(link);
                     scrollToSection(link);
                     setOpen(false);
                   }}

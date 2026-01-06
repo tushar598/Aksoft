@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "../components/HomePage/Navbar.jsx";
+
 import HeroSection from "../components/HomePage/HeroSection.jsx";
 import CourseSection from "../components/HomePage/CourseSection.jsx";
-import CourseFilterProvider from "../context/CourseFilterProvider";
 import AboutSection from "../components/HomePage/AboutSection.jsx";
 import StatsSection from "../components/HomePage/StatsSection.jsx";
 import ProductScrollSection from "../components/HomePage/ProductScrollSection.jsx";
@@ -12,8 +11,7 @@ import MapSection from "../components/HomePage/MapSection.jsx";
 
 const HomePage = () => {
   return (
-    <CourseFilterProvider>
-       <Navbar />
+    <>
       <HeroSection />
       <CourseSection />
       <AboutSection />
@@ -22,7 +20,7 @@ const HomePage = () => {
       <ContactSection />
       <MapSection />
       <Footer />
-    </CourseFilterProvider>
+    </>
   );
 };
 export default HomePage;

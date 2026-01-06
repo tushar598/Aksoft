@@ -12,37 +12,49 @@ const FaqItem = ({ service, isActive, onActivate }) => {
     const ctx = gsap.context(() => {
       if (isActive) {
         // OPEN ANIMATION
+        gsap.killTweensOf(rightTitleRef.current);
 
         gsap.to(containerRef.current, {
           height: "auto",
-          duration: 0.6,
+          duration: 0.35, // was 0.6
           ease: "power3.out",
         });
 
         gsap.to(contentRef.current, {
           opacity: 1,
-          duration: 0.5,
-          delay: 0.1,
+          duration: 0.25, // was 0.5
+          delay: 0.05, // was 0.1
           ease: "power2.out",
         });
 
         gsap.fromTo(
           leftTitleRef.current,
           { x: -20, opacity: 0 },
-          { x: 0, opacity: 1, duration: 0.5, delay: 0.1, ease: "power2.out" }
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.08, // was 0.1
+            ease: "power1.out",
+          }
         );
 
         gsap.fromTo(
           descRef.current,
           { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5, delay: 0.25, ease: "power2.out" }
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.08, // was 0.1
+            ease: "power2.out",
+          }
         );
 
         gsap.to(rightTitleRef.current, {
           opacity: 0,
           x: 20,
-          duration: 0.3,
-          ease: "power2.in",
+          duration: 0.05,
+          ease: "none",
+          overwrite: "auto",
         });
       } else {
         // CLOSE ANIMATION
@@ -77,7 +89,7 @@ const FaqItem = ({ service, isActive, onActivate }) => {
       ref={containerRef}
       onClick={onActivate}
       className={`relative w-full border-b border-gray-300 overflow-hidden cursor-pointer group ${
-        isActive ? "bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] " : "hover:bg-gray-50"
+        isActive ? "bg-white" : "hover:bg-gray-50"
       } transition-colors duration-300`}
       style={{ height: "96px" }}
     >
@@ -95,9 +107,9 @@ const FaqItem = ({ service, isActive, onActivate }) => {
         </div>
 
         {/* ACTIVE CONTENT */}
-       <div
-  ref={contentRef}
-  className="
+        <div
+          ref={contentRef}
+          className="
     opacity-0
     flex flex-col gap-4
     relative
@@ -108,12 +120,11 @@ const FaqItem = ({ service, isActive, onActivate }) => {
     z-10
     pointer-events-none md:pointer-events-auto
   "
->
-
+        >
           <h2
             ref={leftTitleRef}
             className="
-              font-bold  tracking-tight text-white
+              font-bold  tracking-tight text-black
               text-2xl sm:text-3xl md:text-4xl lg:text-4xl
               leading-snug 
             "
@@ -124,7 +135,7 @@ const FaqItem = ({ service, isActive, onActivate }) => {
           <p
             ref={descRef}
             className="
-              text-white
+              text-gray-500
               text-sm sm:text-base
               leading-relaxed
               max-w-3xl

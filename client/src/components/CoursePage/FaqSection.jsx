@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { cppFaqData } from "../../data/faqData/cppfaq.js";
 import FaqItem from "./FaqItem.jsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
-const FaqSection = () => {
+const FaqSection = ({FaqData}) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
@@ -78,7 +77,7 @@ const FaqSection = () => {
           border-t border-gray-300
         "
       >
-        {cppFaqData.map((service, index) => (
+        {FaqData.map((service, index) => (
           <FaqItem
             key={service.id}
             service={service}
