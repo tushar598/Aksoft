@@ -124,7 +124,7 @@ export default function Navbar() {
                   }}
                   className={`block w-full text-left px-3 py-3 rounded-md text-base font-medium
             ${
-              isOpen && isOpenValue === sectionId
+              open && isOpenValue === sectionId
                 ? "text-red-500 bg-red-50"
                 : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
             }

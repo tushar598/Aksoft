@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import StudentSection from "./StudentSection";
+import { StudentCard } from "./StudentCard";
 import { STUDENTS } from "./constants";
 
 const MainSection = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const visibleStudents = showAll ? STUDENTS : STUDENTS.slice(0, 3);
+  const firstThree = STUDENTS.slice(0, 3);
+  const remainingStudents = STUDENTS.slice(3);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#EFEFEF]">
       <main className="pt-5">
         {/* Intro Hero Section */}
         <section className="text-center py-20 px-4">
@@ -20,12 +22,21 @@ const MainSection = () => {
           </p>
         </section>
 
-        {/* Student Sections List */}
-        <div className="flex flex-col  pb-16">
-          {visibleStudents.map((student, index) => (
+        {/* First 3 Students (Always StudentSection) */}
+        <div className="flex flex-col pb-16">
+          {firstThree.map((student, index) => (
             <StudentSection key={student.id} data={student} index={index} />
           ))}
         </div>
+
+        {/* Remaining Students (StudentCard) */}
+        {showAll && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 p-4 md:p-12 place-items-center">
+            {remainingStudents.map((student) => (
+              <StudentCard key={student.id} student={student} />
+            ))}
+          </div>
+        )}
 
         {/* Show More / Less Button */}
         {STUDENTS.length > 3 && (

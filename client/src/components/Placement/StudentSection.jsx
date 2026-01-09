@@ -148,7 +148,7 @@ const StudentSection = ({ data }) => {
 
               <div className="flex flex-col">
                 <span className="text-xl font-bold text-gray-800 block mb-1">
-                  {feature.title}
+                  {feature.role}
                 </span>
                 <span className="text-sm font-medium text-gray-500">
                   {feature.description}

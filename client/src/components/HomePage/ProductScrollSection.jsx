@@ -53,7 +53,7 @@ const ProductScrollSection = () => {
       {/* Scroll Container */}
       <div className="relative">
         <div className="flex gap-6 ml-5 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar">
-          <div className="shrink-0 w-4 sm:w-6" />
+          <div className="shrink-0 w-4 sm:w-6 " />
 
           {products.map((item, index) => (
             <div
@@ -61,8 +61,8 @@ const ProductScrollSection = () => {
               className="
                 group
                 relative
-                min-w-[85%] sm:min-w-[70%] lg:min-w-[32%]
-                h-[420px]
+                min-w-[85%] sm:min-w-[50%] lg:min-w-[32%]
+                h-[520px]
                 snap-start
                 rounded-[24px]
                 overflow-hidden

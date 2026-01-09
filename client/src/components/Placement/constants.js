@@ -11,13 +11,13 @@ export const STUDENTS = [
       {
         id: "f1",
         icon: "instruction",
-        title: "Expert instruction",
+        role: "Expert instruction",
         description: "Find the right instructor for you",
       },
       {
         id: "f2",
         icon: "teachers",
-        title: "+10,000",
+        role: "+10,000",
         description: "Teachers",
       },
     ],
@@ -35,13 +35,13 @@ export const STUDENTS = [
       {
         id: "f3",
         icon: "community",
-        title: "Community",
+        role: "Community",
         description: "Join thousands of students",
       },
       {
         id: "f4",
         icon: "certificate",
-        title: "Certified",
+        role: "Certified",
         description: "Get recognized certificates",
       },
     ],
@@ -59,13 +59,13 @@ export const STUDENTS = [
       {
         id: "f5",
         icon: "instruction",
-        title: "Live Sessions",
+        role: "Live Sessions",
         description: "Interactive real-time learning",
       },
       {
         id: "f6",
         icon: "teachers",
-        title: "24/7 Support",
+        role: "24/7 Support",
         description: "Always here to help you",
       },
     ],
@@ -83,13 +83,13 @@ export const STUDENTS = [
       {
         id: "f7",
         icon: "certificate",
-        title: "Job Ready",
+        role: "",
         description: "Skills that employers want",
       },
       {
         id: "f8",
         icon: "community",
-        title: "Networking",
+        role: "Networking",
         description: "Connect with industry pros",
       },
     ],
@@ -105,15 +105,15 @@ export const STUDENTS = [
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
     features: [
       {
-        id: "f7",
+        id: "f9",
         icon: "certificate",
-        title: "Job Ready",
+        role: "Job Ready",
         description: "Skills that employers want",
       },
       {
-        id: "f8",
+        id: "f10",
         icon: "community",
-        title: "Networking",
+        role: "Networking",
         description: "Connect with industry pros",
       },
     ],
@@ -129,15 +129,63 @@ export const STUDENTS = [
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
     features: [
       {
-        id: "f7",
+        id: "f11",
         icon: "certificate",
-        title: "Job Ready",
+        role: "Job Ready",
         description: "Skills that employers want",
       },
       {
-        id: "f8",
+        id: "f12",
         icon: "community",
-        title: "Networking",
+        role: "Networking",
+        description: "Connect with industry pros",
+      },
+    ],
+    reverseLayout: true,
+  },
+  {
+    id: "s7",
+    imageUrl:
+      "/student04.png",
+    firstName: "tushar ",
+    lastName: "singh chouhan",
+    description:
+      "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
+    features: [
+      {
+        id: "f13",
+        icon: "certificate",
+        role: "Job Ready",
+        description: "Skills that employers want",
+      },
+      {
+        id: "f14",
+        icon: "community",
+        role: "Networking",
+        description: "Connect with industry pros",
+      },
+    ],
+    reverseLayout: true,
+  },
+  {
+    id: "s8",
+    imageUrl:
+      "/student04.png",
+    firstName: "tushar ",
+    lastName: "singh chouhan",
+    description:
+      "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
+    features: [
+      {
+        id: "f15",
+        icon: "certificate",
+        role: "Job Ready",
+        description: "Skills that employers want",
+      },
+      {
+        id: "f16",
+        icon: "community",
+        role: "Networking",
         description: "Connect with industry pros",
       },
     ],
