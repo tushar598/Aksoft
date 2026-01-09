@@ -61,7 +61,7 @@ const FaqSection = ({FaqData}) => {
       >
         <h1
           className="
-            font-bold tracking-tighter text-[#fa4b37]
+            font-bold tracking-tighter bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl
           "
         >

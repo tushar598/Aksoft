@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Footer from "../HomePage/Footer";
@@ -171,8 +171,57 @@ export default function MacBookAirShowcase() {
         </div>
       </section>
 
+      {/* COURSE DESCRIPTION + FEATURES */}
+      <section className="relative bg-[#f0f2fb] py-28 px-6 overflow-hidden  ">
+        {/* Background Glow */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/2  w-[600px] h-[600px] bg-indigo-500 " />
+        </div>
+
+        {/* COURSE DESCRIPTION */}
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight  bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
+          {courseTitle[0]} 
+          </h2>
+        </motion.div>
+
+        {/* FEATURES */}
+        <motion.div
+          className="mt-20 max-w-6xl mx-auto grid gap-10 md:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+        >
+          {activeRoadmapData?.[0]?.features.map((feat, i) => (
+            <motion.div
+              key={i}
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05 }}
+              className="z-10 px-8 py-4 rounded-lg border-2 border-gray-900 bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771]
+        shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center max-w-xs md:max-w-sm w-full
+         hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+        transition-all duration-200"
+            >
+              <h3 className="text-xl font-bold mb-3 text-white">
+                {feat.title}
+              </h3>
+              <p className="text-gray-200 leading-relaxed">
+                {feat.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
       {/* NEW COURSE ROADMAP SECTION (Roadmap.sh Style) */}
-      <section className="py-24 px-4 sm:px-6 bg-[#f8f9fa] relative">
+      <section className="py-10 px-4 sm:px-6 bg-[#f8f9fa] relative">
         <div className="max-w-7xl mx-auto mb-16 text-center">
           <span className="text-purple-600 font-bold tracking-wider text-sm uppercase">
             Curriculum
@@ -204,13 +253,8 @@ export default function MacBookAirShowcase() {
         <Roadmap data={activeRoadmapData.slice(1)} />
       </section>
 
-      {/* COURSE DESCRIPTION + FEATURES */}
-      <section className="relative py-28 px-6 overflow-hidden bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771]  text-white">
-        {/* Background Glow */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2  w-[600px] h-[600px] bg-indigo-500 blur-[140px]" />
-        </div>
-
+      
+      <section className="relative bg-[#fcfcf2] py-15 px-6 overflow-hidden  ">
         {/* COURSE DESCRIPTION */}
         <motion.div
           className="max-w-4xl mx-auto text-center"
@@ -219,38 +263,13 @@ export default function MacBookAirShowcase() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight  bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
             Master {courseTitle[0]} with Precision & Performance
           </h2>
 
-          <p className="mt-6 text-lg text-gray-200 leading-relaxed">
+          <p className="mt-6 text-lg text-gray-600 leading-relaxed">
             {courseTitle[1]}
           </p>
-        </motion.div>
-
-        {/* FEATURES */}
-        <motion.div
-          className="mt-20 max-w-6xl mx-auto grid gap-10 md:grid-cols-3"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          {activeRoadmapData?.[0]?.features.map((feat, i) => (
-            <motion.div
-              key={i}
-              variants={fadeInUp}
-              whileHover={{ scale: 1.05 }}
-              className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 transition-all duration-300  hover:shadow-[0_0_50px_-10px_rgba(255,255,255,0.4)]"
-            >
-              <h3 className="text-xl font-bold mb-3 text-white">
-                {feat.title}
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                {feat.description}
-              </p>
-            </motion.div>
-          ))}
         </motion.div>
       </section>
 

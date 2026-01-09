@@ -1,7 +1,7 @@
-import { useState, useRef , useEffect } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import gsap from "gsap";
 import { motion, AnimatePresence } from "framer-motion";
 import useCourseFilter from "../../hooks/useCourseFilter";
-
 
 const slides = [
   {
@@ -33,6 +33,10 @@ const slides = [
 const swipeConfidenceThreshold = 10000;
 
 const HeroSection = () => {
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const descRef = useRef(null);
+
   const [[index, direction], setIndex] = useState([0, 0]);
   const { setFilter } = useCourseFilter();
 
@@ -61,6 +65,28 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [index]);
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        [titleRef.current, subtitleRef.current, descRef.current],
+        {
+          y: 80,
+          opacity: 0,
+          skewY: 5,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          skewY: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          stagger: 0.15,
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, [index]); // 🔥 re-run on slide change
 
   const handleLearnMore = (filter) => {
     setFilter(filter);
@@ -95,29 +121,35 @@ const HeroSection = () => {
           animate="center"
           exit="exit"
           transition={{ duration: 0.8, ease: "easeInOut" }}
-
           drag="x"
           dragConstraints={{ left: 0, right: 0 }}
           dragElastic={0.8}
           style={{ touchAction: "pan-y" }} // 🔹 NEW (mobile friendly)
-
           onDragEnd={(e, { offset, velocity }) => {
             const swipe = Math.abs(offset.x) * velocity.x;
             if (swipe < -swipeConfidenceThreshold) paginate(1);
             else if (swipe > swipeConfidenceThreshold) paginate(-1);
           }}
         >
+          
+
           {/* TEXT */}
-          <div className="flex-1  text-center lg:text-left space-y-4 max-w-4xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold">
+          <div className="flex-1  z-1 text-center lg:text-left space-y-4 max-w-4xl">
+            <h1
+              ref={titleRef}
+              className="text-[14vw] md:text-[8vw] leading-[0.9] tracking-tighter drop-shadow-xl font-black
+            bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent"
+            >
               {slides[index].title}
             </h1>
 
-            <h2 className="text-xl sm:text-2xl text-gray-700">
+            <h2 ref={subtitleRef} className="text-xl font-semibold sm:text-2xl text-gray-700">
               {slides[index].subtitle}
             </h2>
 
-            <p className="text-gray-500">{slides[index].desc}</p>
+            <p ref={descRef} className="text-gray-500">
+              {slides[index].desc}
+            </p>
 
             <div className="flex justify-center lg:justify-start gap-1 pt-4">
               <button
@@ -126,8 +158,6 @@ const HeroSection = () => {
               >
                 Learn more
               </button>
-
-          
             </div>
           </div>
 

@@ -74,7 +74,55 @@ export const STUDENTS = [
   {
     id: "s4",
     imageUrl:
-      "/tushar.png",
+      "/student04.png",
+    firstName: "tushar ",
+    lastName: "singh chouhan",
+    description:
+      "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
+    features: [
+      {
+        id: "f7",
+        icon: "certificate",
+        title: "Job Ready",
+        description: "Skills that employers want",
+      },
+      {
+        id: "f8",
+        icon: "community",
+        title: "Networking",
+        description: "Connect with industry pros",
+      },
+    ],
+    reverseLayout: true,
+  },
+  {
+    id: "s5",
+    imageUrl:
+      "/student04.png",
+    firstName: "tushar ",
+    lastName: "singh chouhan",
+    description:
+      "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
+    features: [
+      {
+        id: "f7",
+        icon: "certificate",
+        title: "Job Ready",
+        description: "Skills that employers want",
+      },
+      {
+        id: "f8",
+        icon: "community",
+        title: "Networking",
+        description: "Connect with industry pros",
+      },
+    ],
+    reverseLayout: false,
+  },
+  {
+    id: "s6",
+    imageUrl:
+      "/student04.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
     description:

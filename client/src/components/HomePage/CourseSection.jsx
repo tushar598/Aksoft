@@ -93,7 +93,7 @@ const CourseSection = () => {
   return (
     <section
       id="courses"
-      className="relative py-24 px-6 bg-gradient-to-b from-[#eef5fb] to-white overflow-hidden"
+      className="relative py-24 px-6  bg-gradient-to-b from-[#eef5fb] to-white overflow-hidden"
     >
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-14">
@@ -139,7 +139,7 @@ const CourseSection = () => {
               <motion.div
                 key={course.id}
                 whileHover={{ y: -8 }}
-                className="card_detail backdrop-blur-md bg-white/70 shadow-xl"
+                className="card_detail rounded-2xl backdrop-blur-md bg-white/70 shadow-xl"
               >
                 <div className="card_info flex flex-col h-full justify-between p-6">
                   {/* Image Section */}

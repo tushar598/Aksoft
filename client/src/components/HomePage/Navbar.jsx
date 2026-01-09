@@ -1,33 +1,32 @@
 import { useState } from "react";
-import useScrollSpy from "../../hooks/useScrollSpy";
 import { Link, useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+
 import { scrollToSection } from "../../utils/scrollToSection";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const [isOpenValue, setIsOpenValue] = useState("");
   const navigate = useNavigate();
-
-  // 👇 ADD scroll spy hook
-  const activeSection = useScrollSpy([
-    "home",
-    "courses",
-    "placement_section",
-    "about_section",
-    "footer-contact",
-  ]);
 
   function doNavigation(sectionId) {
     if (sectionId === "home") {
       navigate("/");
-      setIsOpen(false);
-      setIsOpenValue("");
+      
+      setIsOpenValue("home");
     }
     if (sectionId === "placement_section") {
       navigate("/placement");
-      setIsOpen(true);
+    
       setIsOpenValue("placement_section");
+    }
+    if (sectionId === "courses") {
+      navigate("/course");
+      setIsOpenValue("courses");
+    }
+    if (sectionId === "about_section") {
+      navigate("/about");
+      setIsOpenValue("about_section");
     }
   }
 
@@ -66,9 +65,7 @@ export default function Navbar() {
                       }}
                       className={`relative text-base font-medium transition
                         ${
-                          isOpen && isOpenValue === sectionId
-                            ? "text-[#fa4b37] after:scale-x-100"
-                            : !isOpen && activeSection === sectionId
+                           isOpenValue === sectionId
                             ? "text-[#fa4b37] after:scale-x-100"
                             : "text-slate-700 after:scale-x-0"
                         }
@@ -91,66 +88,61 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* ===== Hamburger ===== */}
-            <button
-              onClick={() => setOpen(!open)}
-              className="lg:hidden flex h-10 w-10 flex-col items-center justify-center"
-            >
-              <span
-                className={`h-[2px] w-6 bg-black transition ${
-                  open ? "rotate-45 translate-y-[6px]" : ""
-                }`}
-              />
-              <span
-                className={`h-[2px] w-6 bg-black my-1 transition ${
-                  open ? "opacity-0" : ""
-                }`}
-              />
-              <span
-                className={`h-[2px] w-6 bg-black transition ${
-                  open ? "-rotate-45 -translate-y-[6px]" : ""
-                }`}
-              />
-            </button>
+           
+            <div className="lg:hidden flex items-center">
+              <button
+                onClick={() => setOpen(!open)}
+                className="text-slate-600 hover:text-slate-900 focus:outline-none"
+              >
+                {open ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* ===== MOBILE DROPDOWN ===== */}
-        <div
-          className={`lg:hidden absolute left-0 right-0 top-full bg-gradient-to-r from-[#f94a38] to-[#df286f] transition-all duration-300 overflow-hidden 
-            ${open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}
-        >
-          <ul className="flex flex-col items-center ">
-            {[
-              ["Home", "home"],
-              ["Course", "courses"],
-              ["Placement", "placement_section"],
-              ["About-us", "about_section"],
-              ["Contact", "footer-contact"],
-            ].map(([label, link]) => (
-              <li key={label}>
+        
+        {open && (
+          <div className="lg:hidden bg-white border-t border-slate-100 absolute w-full left-0 top-full">
+            <div className="px-4 pt-2 pb-6 space-y-2">
+              {[
+                ["Home", "home"],
+                ["Course", "courses"],
+                ["Placement", "placement_section"],
+                ["About-us", "about_section"],
+                ["Contact", "footer-contact"],
+              ].map(([label, sectionId]) => (
                 <button
+                  key={label}
                   onClick={() => {
-                    doNavigation(link);
-                    scrollToSection(link);
+                    doNavigation(sectionId);
+                    scrollToSection(sectionId);
                     setOpen(false);
                   }}
-                  className="block px-6 py-4 text-center text-white font-medium hover:bg-white/60 rounded-2xl"
+                  className={`block w-full text-left px-3 py-3 rounded-md text-base font-medium
+            ${
+              isOpen && isOpenValue === sectionId
+                ? "text-red-500 bg-red-50"
+                : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+            }
+          `}
                 >
                   {label}
                 </button>
-              </li>
-            ))}
-          </ul>
+              ))}
 
-          <div className="flex justify-center bg-white px-6 py-4">
-            <button className="w-[50%] border border-black px-4 py-2 rounded-lg">
-              <a className="block rounded-lg py-3 text-center font-semibold text-[#0f3460]">
-                Get started
-              </a>
-            </button>
+              <button
+                onClick={() => scrollToSection("footer-contact")}
+                className="w-full mt-4 bg-gradient-to-r from-red-500 to-pink-600 text-white font-medium py-3 rounded-lg shadow-md"
+              >
+                Contact-us
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </nav>
 
       {/* ===== SPACER ===== */}

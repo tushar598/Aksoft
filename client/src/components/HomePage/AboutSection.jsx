@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 
+
 export default function AboutSection() {
   return (
     <section id="about_section" className="w-full py-20 bg-amber-50 overflow-hidden">

@@ -82,7 +82,7 @@ const StudentSection = ({ data }) => {
   return (
     <section
       ref={containerRef}
-      className={`w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 overflow-hidden flex flex-col lg:flex-row items-center gap-6 bg-black  ${
+      className={`w-full max-w-7xl mx-auto px-4 sm:px-6  lg:px-8 py-16 lg:py-24 overflow-hidden flex flex-col lg:flex-row items-center gap-6   ${
         data.reverseLayout ? "lg:flex-row-reverse" : ""
       }`}
     >
@@ -104,17 +104,17 @@ const StudentSection = ({ data }) => {
 
       {/* Content Side */}
       <div className="w-full lg:w-1/2 space-y-8 " ref={contentWrapperRef}>
-        <div className="space-y-6 text-white">
+        <div className="space-y-6 ">
           <h2
             className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight uppercase
-        bg-gradient-to-t from-[#fa4b37]/[0.9] to-[#df2771]/[0.9] bg-clip-text text-transparent"
+        bg-gradient-to-b from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent"
           >
             {data.firstName}
-            <span className="text-white">{data.lastName}</span>
+            <span className="text-gray-800">{data.lastName}</span>
           </h2>
 
           <p
-            className={`text-lg text-brand-muted leading-relaxed max-w-xl transition-all duration-300 ${
+            className={`text-lg text-brand-muted leading-relaxed text-gray-600 max-w-xl transition-all duration-300 ${
               !expanded ? "line-clamp-3" : ""
             }`}
           >
@@ -138,7 +138,7 @@ const StudentSection = ({ data }) => {
             <div
               key={feature.id}
               className="bg-brand-light rounded-3xl p-6 flex items-start gap-4 transition-all  
-              shadow-[0_0_50px_-10px_rgba(255,255,255,0.4)] hover:-translate-y-1 duration-300 group"
+              hover:shadow-[0_0_50px_-10px_rgba(0,0,0,0.4)] hover:-translate-y-1 duration-300 group"
             >
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white group-hover:bg-brand-purple transition-colors duration-300">
@@ -147,7 +147,7 @@ const StudentSection = ({ data }) => {
               </div>
 
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-gray-100 block mb-1">
+                <span className="text-xl font-bold text-gray-800 block mb-1">
                   {feature.title}
                 </span>
                 <span className="text-sm font-medium text-gray-500">
