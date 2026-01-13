@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -36,7 +37,11 @@ const Footer = () => {
             className="space-y-6"
           >
             <div className="bg-white w-60  inline-block px-6 py-1 rounded-xl">
-              <img src="/aksoftlogo.png" alt="Aksoft Logo" className=" mx-auto" />
+              <img
+                src="/aksoftlogo.png"
+                alt="Aksoft Logo"
+                className=" mx-auto"
+              />
             </div>
 
             <p className="text-sm text-white/70 leading-relaxed">
@@ -47,11 +52,23 @@ const Footer = () => {
 
             <div className="flex gap-4 text-lg">
               {[
-                { icon: FaFacebookF, link: "https://www.facebook.com/KanungoAseem"},
-                { icon: FaInstagram, link: "https://www.instagram.com/aksoftechno/?utm_medium=copy_link"},
-                { icon: FaTwitter, link: "https://x.com/aksoftechno"},
-                { icon: FaYoutube, link: "https://www.youtube.com/@aksoftechno/featured"},
-                { icon: FaLinkedinIn, link: "https://www.linkedin.com/company/aksoftechno"},
+                {
+                  icon: FaFacebookF,
+                  link: "https://www.facebook.com/KanungoAseem",
+                },
+                {
+                  icon: FaInstagram,
+                  link: "https://www.instagram.com/aksoftechno/?utm_medium=copy_link",
+                },
+                { icon: FaTwitter, link: "https://x.com/aksoftechno" },
+                {
+                  icon: FaYoutube,
+                  link: "https://www.youtube.com/@aksoftechno/featured",
+                },
+                {
+                  icon: FaLinkedinIn,
+                  link: "https://www.linkedin.com/company/aksoftechno",
+                },
               ].map(({ icon: Icon, link }, i) => (
                 <a
                   key={i}
@@ -69,16 +86,21 @@ const Footer = () => {
           {/* QUICK LINKS */}
           <FooterLinks
             title="Company"
-            links={["About Us", "Our Courses", "Careers", "Blog"]}
+            links={[
+              { name: "About Us", url: "/about" },
+              { name: "Our Courses", url: "/course" },
+              { name: "Blog", url: "/blog" },
+            ]}
           />
 
           <FooterLinks
             title="Resources"
             links={[
-              "Documentation",
-              "Student Portal",
-              "FAQs",
-              "Support Center",
+              { name: "Contact Us", url: "/contact" },
+              {
+                name: "Sitemap",
+                url: "https://maps.app.goo.gl/5HrcWAthqfkukUSW9",
+              },
             ]}
           />
 
@@ -113,8 +135,7 @@ const Footer = () => {
               </div>
 
               <p className="text-xs text-white/50">
-                Business Hours: Mon - Sat
-                (6:00 PM – 9:00 PM)
+                Business Hours: Mon - Sat (6:00 PM – 9:00 PM)
               </p>
             </div>
           </motion.div>
@@ -142,9 +163,9 @@ const FooterLinks = ({ title, links }) => (
     <ul className="space-y-3 text-sm text-white/70">
       {links.map((link, idx) => (
         <li key={idx}>
-          <a href="#" className="hover:text-white transition">
-            {link}
-          </a>
+          <Link to={link.url} className="hover:text-white transition">
+            {link.name}
+          </Link>
         </li>
       ))}
     </ul>

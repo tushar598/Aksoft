@@ -1,8 +1,7 @@
 export const STUDENTS = [
   {
     id: "s1",
-    imageUrl:
-      "/tushar.png",
+    imageUrl: "/tushar.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
     description:
@@ -11,22 +10,21 @@ export const STUDENTS = [
       {
         id: "f1",
         icon: "instruction",
-        role: "Expert instruction",
-        description: "Find the right instructor for you",
+        role: "Software Engineer",
+        description: "Infosys",
       },
       {
         id: "f2",
         icon: "teachers",
-        role: "+10,000",
-        description: "Teachers",
+        role: "Social Media",
+        description: "Linkedin",
       },
     ],
     reverseLayout: false,
   },
   {
     id: "s2",
-    imageUrl:
-      "/student02.png",
+    imageUrl: "/student02.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
     description:
@@ -34,23 +32,22 @@ export const STUDENTS = [
     features: [
       {
         id: "f3",
-        icon: "community",
-        role: "Community",
-        description: "Join thousands of students",
+        icon: "instruction",
+        role: "Web Developer",
+        description: "Google",
       },
       {
         id: "f4",
-        icon: "certificate",
-        role: "Certified",
-        description: "Get recognized certificates",
+        icon: "teachers",
+        role: "Social Media",
+        description: "Linkedin",
       },
     ],
     reverseLayout: true,
   },
   {
     id: "s3",
-    imageUrl:
-     "/student03.png",
+    imageUrl: "/student03.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
     description:
@@ -59,136 +56,72 @@ export const STUDENTS = [
       {
         id: "f5",
         icon: "instruction",
-        role: "Live Sessions",
-        description: "Interactive real-time learning",
+        role: "Mobile App Developer",
+        description: "Apple",
       },
       {
         id: "f6",
         icon: "teachers",
-        role: "24/7 Support",
-        description: "Always here to help you",
+        role: "Social Media",
+        description: "Linkedin",
       },
     ],
     reverseLayout: false,
   },
+  // student cards data starts from here :
   {
     id: "s4",
-    imageUrl:
-      "/student04.png",
+    imageUrl: "/student04.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
+    role: "Software Developer at Aksoft Systems",
+    company: "Aksoft Systems",
     description:
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
-    features: [
-      {
-        id: "f7",
-        icon: "certificate",
-        role: "",
-        description: "Skills that employers want",
-      },
-      {
-        id: "f8",
-        icon: "community",
-        role: "Networking",
-        description: "Connect with industry pros",
-      },
-    ],
     reverseLayout: true,
   },
   {
     id: "s5",
-    imageUrl:
-      "/student04.png",
+    imageUrl: "/student04.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
+    role: "Software Developer at Aksoft Systems",
+    company: "Aksoft Systems",
     description:
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
-    features: [
-      {
-        id: "f9",
-        icon: "certificate",
-        role: "Job Ready",
-        description: "Skills that employers want",
-      },
-      {
-        id: "f10",
-        icon: "community",
-        role: "Networking",
-        description: "Connect with industry pros",
-      },
-    ],
     reverseLayout: false,
   },
   {
     id: "s6",
-    imageUrl:
-      "/student04.png",
+    imageUrl: "/student04.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
+    role: "Software Developer at Aksoft Systems",
+    company: "Aksoft Systems",
     description:
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
-    features: [
-      {
-        id: "f11",
-        icon: "certificate",
-        role: "Job Ready",
-        description: "Skills that employers want",
-      },
-      {
-        id: "f12",
-        icon: "community",
-        role: "Networking",
-        description: "Connect with industry pros",
-      },
-    ],
     reverseLayout: true,
   },
   {
     id: "s7",
-    imageUrl:
-      "/student04.png",
+    imageUrl: "/student04.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
+    role: "Software Developer at Aksoft Systems",
+    company: "Aksoft Systems",
     description:
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
-    features: [
-      {
-        id: "f13",
-        icon: "certificate",
-        role: "Job Ready",
-        description: "Skills that employers want",
-      },
-      {
-        id: "f14",
-        icon: "community",
-        role: "Networking",
-        description: "Connect with industry pros",
-      },
-    ],
     reverseLayout: true,
   },
   {
     id: "s8",
-    imageUrl:
-      "/student04.png",
+    imageUrl: "/student04.png",
     firstName: "tushar ",
     lastName: "singh chouhan",
+    role: "Software Developer at Aksoft Systems",
+    company: "Aksoft Systems",
     description:
       "Pellentesque in ipsum id orci porta dapibus. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Sed porttitor lectus nibh.",
-    features: [
-      {
-        id: "f15",
-        icon: "certificate",
-        role: "Job Ready",
-        description: "Skills that employers want",
-      },
-      {
-        id: "f16",
-        icon: "community",
-        role: "Networking",
-        description: "Connect with industry pros",
-      },
-    ],
     reverseLayout: true,
   },
 ];

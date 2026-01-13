@@ -49,17 +49,7 @@ export const TeacherIcon = ({ className }) => (
   </svg>
 );
 
-export const CommunityIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M16 11C16 9.34 14.66 8 13 8C11.34 8 10 9.34 10 11C10 12.66 11.34 14 13 14C14.66 14 16 12.66 16 11ZM8 11C8 9.34 6.66 8 5 8C3.34 8 2 9.34 2 11C2 12.66 3.34 14 5 14C6.66 14 8 12.66 8 11ZM8 11V11.01M16 11V11.01M20.5 15.5C20.5 15.5 19 14.5 16.5 14.5C14 14.5 13.5 16 13.5 16V18H23.5V16C23.5 16 23 15.5 20.5 15.5ZM5.5 15.5C5.5 15.5 4 14.5 1.5 14.5C-1 14.5 -1.5 16 -1.5 16V18H10.5V16C10.5 16 10 15.5 7.5 15.5H5.5Z" />
-  </svg>
-);
 
-export const CertificateIcon = ({ className }) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
-    <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM12 17L9 15L6 17V7H12V17ZM18 17H14V5H18V17Z" />
-  </svg>
-);
 
 export const IconRenderer = ({ type, className }) => {
   switch (type) {

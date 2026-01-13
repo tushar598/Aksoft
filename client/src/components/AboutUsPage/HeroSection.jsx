@@ -10,7 +10,6 @@ export const HeroSection = () => {
   const bgImageRef = useRef(null);
   const contentWrapperRef = useRef(null);
   const titleLine1Ref = useRef(null);
-  const titleLine2Ref = useRef(null);
   const secondaryContentRef = useRef(null);
 
   useLayoutEffect(() => {

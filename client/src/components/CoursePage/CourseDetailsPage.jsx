@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import Footer from "../HomePage/Footer";
 import Roadmap from "./Roadmap";
 import roadmapData from "../../data/roadmapData.json";
 import coreJavaRoadmapData from "../../data/coreJavaRoadmapData.json";
@@ -45,7 +44,6 @@ const CourseRoadmapData = {
 
 export default function MacBookAirShowcase() {
   const { course } = useParams();
-  const [faqData, setFaqData] = useState(cppFaqData);
   let courseTitle = course || "cpp";
 
   const activeRoadmapData =
@@ -108,29 +106,28 @@ export default function MacBookAirShowcase() {
           "This course covers C++ programming from basics to intermediate concepts, including object-oriented programming, memory management, STL, and performance-oriented coding. It is ideal for competitive programming and system-level development.",
         ];
 
-  useEffect(() => {
-    if (course === "cpp") {
-      setFaqData(cppFaqData);
-    } else if (course === "corejava") {
-      setFaqData(coreJavaFaqData);
-    } else if (course === "pythonbasics") {
-      setFaqData(pythonFaqData);
-    } else if (course === "advancedjava") {
-      setFaqData(advancedJavaFaqData);
-    } else if (course === "basicc") {
-      setFaqData(cFaqData);
-    } else if (course === "basicjavascript") {
-      setFaqData(jsFaqData);
-    } else if (course === "htmlcssjs") {
-      setFaqData(htmlCssJsFaqData);
-    } else if (course === "mernstack") {
-      setFaqData(mernFaqData);
-    } else if (course === "dbms") {
-      setFaqData(dbmsFaqData);
-    } else if (course === "dsafoundations") {
-      setFaqData(dsaFaqData);
-    }
-  }, [course]);
+  const faqData =
+    course === "cpp"
+      ? cppFaqData
+      : course === "corejava"
+      ? coreJavaFaqData
+      : course === "pythonbasics"
+      ? pythonFaqData
+      : course === "advancedjava"
+      ? advancedJavaFaqData
+      : course === "basicc"
+      ? cFaqData
+      : course === "basicjavascript"
+      ? jsFaqData
+      : course === "htmlcssjs"
+      ? htmlCssJsFaqData
+      : course === "mernstack"
+      ? mernFaqData
+      : course === "dbms"
+      ? dbmsFaqData
+      : course === "dsafoundations"
+      ? dsaFaqData
+      : cppFaqData;
 
   return (
     <div className="bg-white text-gray-900 overflow-x-hidden">
@@ -277,9 +274,7 @@ export default function MacBookAirShowcase() {
         <FaqSection FaqData={faqData} />
       </section>
 
-      <section>
-        <Footer />
-      </section>
+      
     </div>
   );
 }

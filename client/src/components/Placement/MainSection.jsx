@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import {Link} from "react-router-dom";
 import StudentSection from "./StudentSection";
 import { StudentCard } from "./StudentCard";
 import { STUDENTS } from "./constants";
 
 const MainSection = () => {
-  const [showAll, setShowAll] = useState(false);
 
   const firstThree = STUDENTS.slice(0, 3);
-  const remainingStudents = STUDENTS.slice(3);
+  // const remainingStudents = STUDENTS.slice(3);
 
   return (
     <div className="min-h-screen bg-[#EFEFEF]">
@@ -29,26 +29,26 @@ const MainSection = () => {
           ))}
         </div>
 
-        {/* Remaining Students (StudentCard) */}
+        {/* Remaining Students (StudentCard)
         {showAll && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-10 p-4 md:p-12 place-items-center">
             {remainingStudents.map((student) => (
               <StudentCard key={student.id} student={student} />
             ))}
           </div>
-        )}
+        )} */}
 
         {/* Show More / Less Button */}
         {STUDENTS.length > 3 && (
           <div className="flex justify-center pb-24">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="px-8 py-3 rounded-xl font-semibold text-white
+            <Link
+             to={"/students"}
+              className="px-8 py-3 rounded-xl font-semibold text-white text-center
               bg-gradient-to-r from-[#fa4b37] to-[#df2771] border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none
               hover:opacity-90 transition-all"
             >
-              {showAll ? "Show Less" : "Show More"}
-            </button>
+             "Show More"
+            </Link>
           </div>
         )}
       </main>

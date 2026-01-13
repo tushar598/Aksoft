@@ -7,7 +7,7 @@ import CourseCard from "./CourseCards";
 gsap.registerPlugin(ScrollTrigger);
 
 const CourseSection = () => {
-  const [activeCategory, setActiveCategory] = useState("Beginner");
+  const [activeCategory, setActiveCategory] = useState("All");
   const containerRef = useRef(null);
   const cardsRef = useRef(null);
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { User, FileText, BadgeCheck, Plus } from 'lucide-react';
+import React from "react";
+import { User, FileText, BadgeCheck, Plus } from "lucide-react";
 
 export const StudentCard = ({ student }) => {
   return (
@@ -19,12 +19,12 @@ export const StudentCard = ({ student }) => {
 
         {/* Content Area - Positioned absolutely at bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-5 pt-0 flex flex-col justify-end h-full pointer-events-none">
-          
           {/* Text Content */}
           <div className="pointer-events-auto">
             <div className="flex items-center gap-2 mb-1">
               <h3 className="text-xl font-bold text-gray-900 tracking-tight">
-                {student.firstName} <span className="text-gray-700">{student.lastName}</span>
+                {student.firstName}{" "}
+                <span className="text-gray-700">{student.lastName}</span>
               </h3>
             </div>
 
@@ -38,19 +38,13 @@ export const StudentCard = ({ student }) => {
                 <div className="flex items-center gap-1.5">
                   <User className="w-4 h-4 text-gray-500" strokeWidth={2.5} />
                   <span className="text-sm font-semibold">
-                    {student.roles}
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <FileText className="w-4 h-4 text-gray-500" strokeWidth={2.5} />
-                  <span className="text-sm font-semibold">
-                    {student.projects}
+                    {student.company || "N/A"}
                   </span>
                 </div>
               </div>
 
               <button className="flex items-center gap-1 bg-gray-200/80 backdrop-blur-sm hover:bg-gray-300 active:scale-95 text-gray-900 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 shadow-sm">
-                LinkedIn <Plus className="w-4 h-4" strokeWidth={3} />
+                LinkedIn
               </button>
             </div>
           </div>
