@@ -180,7 +180,7 @@ export default function Navbar() {
   return (
     <>
       {/* ===== FIXED NAVBAR ===== */}
-      <nav className="fixed top-0 left-0 px-5 right-0 z-50 bg-white shadow-md">
+      <nav className="fixed top-0 left-0 px-5  py-2 right-0 z-50 bg-white shadow-md">
         <div className="mx-auto max-w-7xl ">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
@@ -188,8 +188,8 @@ export default function Navbar() {
               onClick={() => navigate("/")}
               className="flex items-center cursor-pointer"
             >
-              <img src="/aksoft.png" alt="logo" className="w-8 h-8" />
-              <span className="font-bold text-3xl">ksoft</span>
+              <img src="/aksoft.png" alt="logo" className="w-10 h-10" />
+              <span className="font-bold text-4xl">ksoft</span>
             </div>
 
             {/* ===== Desktop Menu ===== */}
@@ -233,58 +233,57 @@ export default function Navbar() {
           </div>
         </div>
 
-     {/* ===== Mobile Menu Overlay ===== */}
-{open && (
-  <>
-    {/* Backdrop */}
-    <div
-      onClick={() => setOpen(false)}
-      className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
-    />
+        {/* ===== Mobile Menu Overlay ===== */}
+        {open && (
+          <>
+            {/* Backdrop */}
+            <div
+              onClick={() => setOpen(false)}
+              className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
+            />
 
-    {/* Drawer */}
-    <div className="fixed top-0 right-0 z-50 h-screen w-[85%] max-w-sm bg-white shadow-xl">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 h-16 border-b">
-        <div className="flex items-center gap-2">
-          <img src="/aksoft.png" alt="logo" className="w-7 h-7" />
-          <span className="font-bold text-xl">ksoft</span>
-        </div>
-        <button onClick={() => setOpen(false)}>
-          <X className="w-6 h-6" />
-        </button>
-      </div>
+            {/* Drawer */}
+            <div className="fixed top-0 right-0 z-50 h-screen w-[85%] max-w-sm bg-white shadow-xl">
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 h-16 border-b">
+                <div className="flex items-center">
+                  <img src="/aksoft.png" alt="logo" className="w-8 h-8" />
+                  <span className="font-bold text-3xl">ksoft</span>
+                </div>
+                <button onClick={() => setOpen(false)}>
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
 
-      {/* Menu Items */}
-      <div className="px-4 py-6 space-y-2">
-        {navItems.map((item) => (
-          <button
-            key={item.label}
-            onClick={() => handleNavigation(item.path)}
-            className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition
+              {/* Menu Items */}
+              <div className="px-4 py-6 space-y-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.label}
+                    onClick={() => handleNavigation(item.path)}
+                    className={`block w-full text-left px-4 py-3 rounded-lg font-medium transition
               ${
                 isActive(item.path)
                   ? "text-red-500 bg-red-50"
                   : "text-slate-700 hover:bg-slate-100"
               }
             `}
-          >
-            {item.label}
-          </button>
-        ))}
+                  >
+                    {item.label}
+                  </button>
+                ))}
 
-        {/* CTA */}
-        <button
-          onClick={() => handleNavigation("/contact")}
-          className="w-full mt-6 bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white py-3 rounded-lg font-semibold"
-        >
-          Contact-us
-        </button>
-      </div>
-    </div>
-  </>
-)}
-
+                {/* CTA */}
+                <button
+                  onClick={() => handleNavigation("/contact")}
+                  className="w-full mt-6 bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white py-3 rounded-lg font-semibold"
+                >
+                  Contact-us
+                </button>
+              </div>
+            </div>
+          </>
+        )}
       </nav>
 
       {/* Spacer */}

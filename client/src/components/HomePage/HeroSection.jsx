@@ -1,189 +1,229 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
+import Stats from "./Stats";
+
 import gsap from "gsap";
-import { motion, AnimatePresence } from "framer-motion";
-import useCourseFilter from "../../hooks/useCourseFilter";
-
-const slides = [
-  {
-    title: "Foundation ",
-    subtitle: "Gets you moving. Keeps you going.",
-    desc: "Best for Beginners.",
-    darkNav: false,
-    link: "Beginner",
-    image: "/temp01.png",
-  },
-  {
-    title: "Web Development",
-    subtitle: "Build modern, responsive websites.",
-    desc: "Learn HTML, CSS, and JavaScript from scratch.",
-    darkNav: true,
-    link: "Web Dev",
-    image: "/temp02.png",
-  },
-  {
-    title: "Problem Solving",
-    subtitle: "Enhance your coding skills.",
-    desc: "Master algorithms and data structures.",
-    darkNav: false,
-    link: "Problem Solving",
-    image: "/temp03.png",
-  },
-];
-
-const swipeConfidenceThreshold = 10000;
+import { ArrowRight, Play } from "lucide-react";
 
 const HeroSection = () => {
+  const comp = useRef(null);
   const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const descRef = useRef(null);
-
-  const [[index, direction], setIndex] = useState([0, 0]);
-  const { setFilter } = useCourseFilter();
-
-  // 🔹 NEW: Prevent rapid slide switching
-  const swipeLock = useRef(false);
-
-  const paginate = (newDirection) => {
-    if (swipeLock.current) return;
-
-    swipeLock.current = true;
-    setIndex([
-      (index + newDirection + slides.length) % slides.length,
-      newDirection,
-    ]);
-
-    setTimeout(() => {
-      swipeLock.current = false;
-    }, 700); // matches animation duration
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      paginate(1);
-    }, 5000); // 5 seconds
-
-    return () => clearInterval(interval);
-  }, [index]);
+  const textRef = useRef(null);
+  const bgImageRef = useRef(null);
+  const btnGroupRef = useRef(null);
+  const rightImageRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        [titleRef.current, subtitleRef.current, descRef.current],
+      const tl = gsap.timeline();
+
+      // 1. Text Content Animation (Staggered Fade Up)
+      tl.from([titleRef.current, textRef.current, btnGroupRef.current], {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      // ✅ 3. Right Image Intro Animation
+      tl.from(
+        rightImageRef.current,
         {
-          y: 80,
+          y: 60,
           opacity: 0,
-          skewY: 5,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          skewY: 0,
+          scale: 0.9,
+          rotateY: 8,
           duration: 1.2,
           ease: "power3.out",
-          stagger: 0.15,
-        }
+        },
+        "-=1.2"
       );
-    });
+
+      tl.from(bgImageRef.current, {
+        scale: 1.2,
+        duration: 1.8,
+        ease: "power3.out",
+      }).from(
+        [".tech-float-1", ".tech-float-2", ".tech-float-3", ".tech-float-4"],
+        {
+          scale: 0,
+          opacity: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "back.out(1.7)",
+        },
+        "-=0.6"
+      );
+      
+      gsap.to(".tech-float-1", {
+        y: -15,
+        rotation: 5,
+        duration: 2.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(".tech-float-2", {
+        y: 15,
+        x: 5,
+        duration: 3.2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 0.5,
+      });
+
+      gsap.to(".tech-float-3", {
+        y: -10,
+        rotation: -2,
+        duration: 2.8,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 1,
+      });
+
+      gsap.to(".tech-float-4", {
+        y: -20,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: 1.5,
+      });
+
+      // 4. Scroll Effects
+      gsap.to(".tech-main-card", {
+        scrollTrigger: {
+          trigger: comp.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+        },
+        y: 50,
+        rotationY: -5,
+      });
+
+      gsap.to(".tech-float-1", {
+        scrollTrigger: {
+          trigger: comp.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1.5,
+        },
+        y: -80,
+      });
+
+      gsap.to(".tech-float-2", {
+        scrollTrigger: {
+          trigger: comp.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 2,
+        },
+        y: -100,
+      });
+
+      gsap.to(".tech-float-4", {
+        scrollTrigger: {
+          trigger: comp.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 0.5,
+        },
+        y: 20,
+      });
+    }, comp);
 
     return () => ctx.revert();
-  }, [index]); // 🔥 re-run on slide change
-
-  const handleLearnMore = (filter) => {
-    setFilter(filter);
-    document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // 🔹 NEW: Trackpad 2-finger swipe (wheel gesture)
-  const handleWheel = (e) => {
-    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      if (e.deltaX > 40) paginate(1);
-      if (e.deltaX < -40) paginate(-1);
-    }
-  };
+  }, []);
 
   return (
     <section
-      id="home"
-      className="relative h-[800px] md:h-[1000px] lg:h-[800px]"
-      onWheel={handleWheel} // 🔹 NEW
+      ref={comp}
+      className="relative  pt-20 pb-12 md:pt-30 md:pb-20 overflow-hidden bg-white"
     >
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={index}
-          custom={direction}
-          className="absolute inset-0 p-5 flex flex-col lg:flex-row items-center justify-center bg-[#f5f5f7] px-6 lg:px-20"
-          variants={{
-            enter: { opacity: 0 },
-            center: { opacity: 1 },
-            exit: { opacity: 0 },
-          }}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.8}
-          style={{ touchAction: "pan-y" }} // 🔹 NEW (mobile friendly)
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = Math.abs(offset.x) * velocity.x;
-            if (swipe < -swipeConfidenceThreshold) paginate(1);
-            else if (swipe > swipeConfidenceThreshold) paginate(-1);
-          }}
-        >
-          
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          ref={bgImageRef}
+          src="/heroSection.jpg"
+          alt="Team brainstorming on beanbags"
+          className="w-full h-full  object-bottom opacity-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/15 to-black/30 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/10" />
+      </div>
 
-          {/* TEXT */}
-          <div className="flex-1  z-1 text-center lg:text-left space-y-4 max-w-4xl">
-            <h1
-              ref={titleRef}
-              className="text-[14vw] md:text-[8vw] leading-[0.9] tracking-tighter drop-shadow-xl font-black
-            bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent"
-            >
-              {slides[index].title}
-            </h1>
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-peach/5 rounded-full blur-[120px] -z-10 translate-x-1/3 -translate-y-1/4" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] -z-10 -translate-x-1/4 translate-y-1/4" />
 
-            <h2 ref={subtitleRef} className="text-xl font-semibold sm:text-2xl text-gray-700">
-              {slides[index].subtitle}
-            </h2>
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Left Column */}
+        <div className="flex flex-col gap-6 md:gap-8 max-w-xl z-10">
+          <h1
+            ref={titleRef}
+            className="text-5xl md:text-6xl lg:text-8xl font-black leading-[0.9] tracking-tighter text-white"
+          >
+            Master the <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fa4b37] to-[#df2771]">
+              art of coding
+            </span>{" "}
+          </h1>
 
-            <p ref={descRef} className="text-gray-500">
-              {slides[index].desc}
-            </p>
+          <p
+            ref={textRef}
+            className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-md"
+          >
+            Build Your Career in Tech with Industry-Ready Coding Skills.Learn
+            Web Development, Java, Python & more with real projects, expert
+            mentors, and placement support.
+          </p>
 
-            <div className="flex justify-center lg:justify-start gap-1 pt-4">
-              <button
-                onClick={() => handleLearnMore(slides[index].link)}
-                className="bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white px-6 py-2 rounded-full"
-              >
-                Learn more
-              </button>
+          <div ref={btnGroupRef}>
+            <button className="group  relative px-8 py-4 bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white rounded-2xl  text-lg overflow-hidden transition-all hover:shadow-2xl hover:shadow-brand-dark/30 hover:-translate-y-1">
+              <div className="flex justify-center  items-center relative z-10">
+                Start Learning
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </button>
+          </div>
+
+          <div className="flex items-center gap-4 text-sm text-gray-500 pt-4">
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="w-8 h-8 rounded-full border-2 border-white bg-gray-200 overflow-hidden"
+                >
+                  <img
+                    src={`https://picsum.photos/seed/${i + 50}/100/100`}
+                    alt="user"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
             </div>
+            <p>
+              Join <span className="font-bold text-gray-300">6,000+</span>{" "}
+              students
+            </p>
           </div>
+        </div>
 
-          {/* IMAGE */}
-          <div className="flex-1 flex justify-center mt-10 lg:mt-0">
-            <img
-              src={slides[index].image}
-              alt={slides[index].title}
-              loading="lazy"
-              className="max-h-[70vh] sm:h-[30vh] lg:h-[70vh] md:h-[40vh] w-auto object-contain"
-            />
-          </div>
-        </motion.div>
-      </AnimatePresence>
-
-      {/* DOTS */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-50">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setIndex([i, i > index ? 1 : -1])}
-            className={`w-3 h-3 rounded-full transition ${
-              i === index ? "bg-black" : "bg-gray-400"
-            }`}
+        {/* Right Column */}
+        <div className="relative  z-10 w-full flex flex-col justify-center md:justify-end perspective-1000">
+          <img
+            ref={rightImageRef}
+            className="rounded-2xl"
+            src="/code.png"
+            alt="code image"
           />
-        ))}
+          <Stats />
+        </div>
       </div>
     </section>
   );

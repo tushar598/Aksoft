@@ -2,13 +2,13 @@ import React from "react";
 import ContactHero from "../components/ContactPage/ContactHero";
 import LocationSection from "../components/ContactPage/LocationSection";
 import FAQSection from "../components/ContactPage/FAQSection";
-import HeroSection from "../components/AboutUsPage/HeroSection";
+import { StartSection } from "../components/ContactPage/StartSection";
 
 const ContactPage = () => {
   return (
     <>
       <main>
-        <HeroSection />
+        <StartSection />
         <LocationSection />
         <ContactHero />
         <FAQSection />

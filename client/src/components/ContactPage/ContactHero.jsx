@@ -92,7 +92,7 @@ const ContactHero = () => {
             ref={(el) => (textRefs.current[0] = el)}
             className="text-5xl md:text-8xl bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent font-black tracking-tighter leading-[0.9] mb-6"
           >
-            AkSoft
+            Contact Us
           </h1>
 
           <p

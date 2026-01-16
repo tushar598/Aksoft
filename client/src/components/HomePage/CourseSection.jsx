@@ -10,6 +10,9 @@ const courses = [
     title: "C++",
     desc: "Learn the fundamentals of programming with C++.",
     level: "Beginner",
+    lessons: 25,
+    duration: "6h 30m",
+    students: 1200,
     image: "/card01.jpg",
     link: "cpp",
   },
@@ -18,6 +21,9 @@ const courses = [
     title: "HTML, CSS & JS",
     desc: "Build modern and responsive websites from scratch.",
     level: "Web Dev",
+    lessons: 30,
+    duration: "8h 15m",
+    students: 1500,
     image: "/card05.jpg",
     link: "htmlcssjs",
   },
@@ -26,6 +32,9 @@ const courses = [
     title: "MERN Stack",
     desc: "Become a full-stack developer with MongoDB, Express, React & Node.",
     level: "Web Dev",
+    lessons: 40,
+    duration: "10h 45m",
+    students: 2000,
     image: "/card06.jpg",
     link: "mernstack",
   },
@@ -34,6 +43,9 @@ const courses = [
     title: "DSA Foundations",
     desc: "Strengthen logic with arrays, recursion & patterns.",
     level: "Problem Solving",
+    lessons: 35,
+    duration: "9h 20m",
+    students: 1800,
     image: "/card09.jpg",
     link: "dsafoundations",
   },
@@ -42,6 +54,9 @@ const courses = [
     title: "Advanced Java",
     desc: "Deep dive into advanced Java concepts and frameworks.",
     level: "Problem Solving",
+    lessons: 28,
+    duration: "7h 10m",
+    students: 1300,
     image: "/card10.jpg",
     link: "advancedjava",
   },
@@ -50,6 +65,9 @@ const courses = [
     title: "Core Java",
     desc: "Master object-oriented programming with Java.",
     level: "Beginner",
+    lessons: 32,
+    duration: "8h 45m",
+    students: 1600,
     image: "/card02.jpg",
     link: "corejava",
   },
@@ -58,6 +76,9 @@ const courses = [
     title: "Python Basics",
     desc: "Master the fundamentals of programming with Python.",
     level: "Beginner",
+    lessons: 29,
+    duration: "7h 50m",
+    students: 1400,
     image: "/card03.png",
     link: "pythonbasics",
   },
@@ -66,6 +87,9 @@ const courses = [
     title: "Basic C",
     desc: "Master the fundamentals of programming with C.",
     level: "Beginner",
+    lessons: 30,
+    duration: "8h 15m",
+    students: 1500,
     image: "/card04.jpg",
     link: "basicc",
   },
@@ -74,6 +98,9 @@ const courses = [
     title: "Basic JavaScript",
     desc: "Master the fundamentals of programming with JavaScript.",
     level: "Beginner",
+    lessons: 30,
+    duration: "8h 15m",
+    students: 1500,
     image: "/card07.jpg",
     link: "basicjavascript",
   },
@@ -82,6 +109,9 @@ const courses = [
     title: "DBMS",
     desc: "Master the fundamentals of Database Management Systems.",
     level: "Web Dev",
+    lessons: 27,
+    duration: "7h 5m",
+    students: 1250,
     image: "/card08.jpg",
     link: "dbms",
   },
@@ -139,38 +169,60 @@ const CourseSection = () => {
               <motion.div
                 key={course.id}
                 whileHover={{ y: -8 }}
-                className="card_detail rounded-2xl backdrop-blur-md bg-white/70 shadow-xl"
+                className="rounded-3xl  bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <div className="card_info flex flex-col h-full justify-between p-6">
+                <div className="flex flex-col h-full p-4">
                   {/* Image Section */}
-                  <div className="w-full aspect-[16/9] rounded-2xl mb-4 bg-gray-100 flex items-center justify-center">
+                  <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-slate-100 mb-4">
                     <img
                       src={course.image}
                       alt={course.title}
                       loading="lazy"
-                      className="w-full h-full object-cover rounded-2xl"
+                      className="w-full h-full object-cover"
                     />
+
+                    {/* Badge */}
+                    <div className="absolute bottom-3 right-3 bg-white px-3 py-1.5 rounded-lg shadow-sm">
+                      <span className="text-sm font-bold text-slate-800">
+                        {course.level}
+                      </span>
+                    </div>
+
+                    <div className="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent pointer-events-none" />
                   </div>
 
                   {/* Content */}
-                  <div>
-                    <span className="inline-block mb-3 px-3 py-1 text-xs rounded-full bg-[#fcede5] text-[#fa4b37] font-semibold uppercase">
-                      {course.level}
-                    </span>
+                  <div className="flex flex-col gap-3 flex-grow">
+                    {/* Meta Row */}
+                    <div className="flex justify-between items-center text-xs font-medium text-slate-500">
+                      <span>{course.duration}</span>
+                      <span>{course.lessons} Lessons</span>
+                    </div>
 
-                    <h3 className="text-xl font-semibold mb-2">
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-slate-900 leading-snug line-clamp-2">
                       {course.title}
                     </h3>
 
-                    <p>{course.desc}</p>
-                  </div>
+                    {/* Description */}
+                    <p className="text-sm text-slate-600 line-clamp-3">
+                      {course.desc}
+                    </p>
 
-                  <Link
-                    to={`/course/${course.link}`}
-                    className="mt-6 w-full text-center rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white py-2 hover:shadow-lg transition-shadow"
-                  >
-                    View Course
-                  </Link>
+                    {/* Footer */}
+                    <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
+                      <span className="text-xs font-semibold text-slate-500">
+                        {course.students?.toLocaleString()} Students
+                      </span>
+
+                      <Link
+                        to={`/course/${course.link}`}
+                        className="px-10 py-3 rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white text-sm  hover:shadow-lg transition-all"
+                      >
+                        View Course
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
