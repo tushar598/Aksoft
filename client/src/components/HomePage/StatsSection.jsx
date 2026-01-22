@@ -10,7 +10,7 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="relative py-24 bg-amber-50 overflow-hidden">
+    <section className="relative py-24 bg-[#ffffff] border-t-1 border-[#e5e7eb] overflow-hidden">
       {/* Section Heading */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -19,10 +19,10 @@ export default function StatsSection() {
         viewport={{ once: true }}
         className="text-center mb-16 px-4"
       >
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+        <h2 className="text-4xl font-semibold bg-gradient-to-r from-[#fe5a48] to-[#dc2f75] bg-clip-text text-transparent mb-3">
           We’re increasing this data every year
         </h2>
-        <p className="mt-3 text-gray-500 text-sm md:text-base">
+        <p className="mt-3 text-gray-500 text-lg">
           Real growth. Real placements. Real success.
         </p>
       </motion.div>
@@ -40,7 +40,7 @@ export default function StatsSection() {
             className="relative group"
           >
             {/* Card */}
-            <div className="bg-gradient-to-br from-red-500 via-pink-500 to-pink-600 rounded-2xl p-10 text-center shadow-xl transition-all duration-300">
+            <div className="bg-gradient-to-br from-[#fa4b37]  to-[#df2771] rounded-2xl p-10 text-center shadow-xl transition-all duration-300">
               <h3 className="text-4xl md:text-5xl font-bold text-white">
                 <CountUp end={item.value} duration={2.5} />+
               </h3>

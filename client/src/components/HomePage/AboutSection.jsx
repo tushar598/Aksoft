@@ -1,18 +1,23 @@
 import { motion } from "framer-motion";
 
-
 export default function AboutSection() {
   return (
-    <section id="about_section" className="w-full py-20 bg-amber-50 overflow-hidden">
+    <section
+      id="about_section"
+      className="w-full py-20 bg-[#fff7ed] overflow-hidden"
+    >
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center text-4xl md:text-5xl font-bold text-red-500 mb-16"
+        className="text-center text-4xl font-semibold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent mb-16"
       >
         About
+        <p className="text-gray-500 text-lg font-light mt-3">
+          Know our vision, values, and commitment to quality tech education.
+        </p>
       </motion.h2>
 
       {/* Main Content */}
@@ -41,7 +46,7 @@ export default function AboutSection() {
           className="relative"
         >
           {/* Gradient Card */}
-          <div className="bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] rounded-2xl p-8 md:p-10 text-white shadow-2xl">
+          <div className=" bg-gradient-to-t from-[#fc8c99] to-[#fe566f] rounded-2xl p-8 md:p-10 text-white shadow-2xl">
             <h3 className="text-2xl md:text-3xl font-semibold mb-6">
               What you think about us ?
             </h3>

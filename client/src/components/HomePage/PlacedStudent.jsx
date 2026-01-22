@@ -39,14 +39,16 @@ const products = [
   },
 ];
 
-const ProductScrollSection = () => {
+const PlacedStudent = () => {
   return (
-    <section className="py-16 bg-[#f5f5f7]">
+    <section className="py-16 bg-[#f9fafb]">
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6 mb-10">
-        <h2 className="text-2xl sm:text-4xl lg:text-4xl font-bold text-gray-800 text-center">
-          <span className="text-[#fa4b37]">Placed</span>{" "}
-          <span className="text-gray-700">Students.</span>
+        <h2 className="text-4xl font-semibold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent text-center">
+          Placed Students.
+          <p className="text-gray-500 text-lg font-light mt-3">
+           Celebrating our students who turned learning into successful tech careers.
+          </p>
         </h2>
       </div>
 
@@ -121,4 +123,4 @@ const ProductScrollSection = () => {
   );
 };
 
-export default ProductScrollSection;
+export default PlacedStudent;

@@ -154,7 +154,7 @@ const HeroSection = () => {
           alt="Team brainstorming on beanbags"
           className="w-full h-full  object-bottom opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/15 to-black/30 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-black/15 to-black/20 mix-blend-multiply" />
         <div className="absolute inset-0 bg-black/10" />
       </div>
 
@@ -219,7 +219,7 @@ const HeroSection = () => {
           <img
             ref={rightImageRef}
             className="rounded-2xl"
-            src="/code.png"
+            src="/code.jpg"
             alt="code image"
           />
           <Stats />

@@ -5,9 +5,9 @@ const MapSection = () => {
     <section
       id="location"
       aria-labelledby="location-heading"
-      className="relative w-full bg-white py-20 px-4 sm:px-6 lg:px-16"
+      className="relative w-full bg-[#ffffff] py-20 px-4 sm:px-6 lg:px-16"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl backdrop-blur-2xl  mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}

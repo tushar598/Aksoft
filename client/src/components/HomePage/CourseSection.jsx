@@ -123,11 +123,11 @@ const CourseSection = () => {
   return (
     <section
       id="courses"
-      className="relative py-24 px-6  bg-gradient-to-b from-[#eef5fb] to-white overflow-hidden"
+      className="relative py-24 px-6  bg-[#f9fafb] overflow-hidden"
     >
       {/* Heading */}
       <div className="text-center max-w-3xl mx-auto mb-14">
-        <h2 className="text-4xl font-semibold text-[#fa4b37]">
+        <h2 className="text-4xl font-semibold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
           Featured Courses
         </h2>
         <p className="text-gray-500 mt-3">
@@ -178,7 +178,7 @@ const CourseSection = () => {
                       src={course.image}
                       alt={course.title}
                       loading="lazy"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-fill md:object-cover"
                     />
 
                     {/* Badge */}
@@ -217,7 +217,7 @@ const CourseSection = () => {
 
                       <Link
                         to={`/course/${course.link}`}
-                        className="px-10 py-3 rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white text-sm  hover:shadow-lg transition-all"
+                        className="px-3 py-3 md:px-10 rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white text-sm  hover:shadow-lg transition-all"
                       >
                         View Course
                       </Link>
