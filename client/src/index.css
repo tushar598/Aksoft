@@ -1,7 +1,5 @@
 @import "tailwindcss";
-*{
-   outline: 1px solid red;
-}
+
 /* Hide scrollbar but keep scroll */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
