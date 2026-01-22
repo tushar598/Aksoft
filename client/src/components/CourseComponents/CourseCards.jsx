@@ -3,49 +3,61 @@ import React from "react";
 
 const CourseCard = ({ course }) => {
   return (
-    <div className="course-card group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full transform hover:-translate-y-1">
-      {/* Image Container */}
-      <div className="relative h-48 overflow-hidden">
-        <img
-          src={course.image}
-          alt={course.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+    <div className="rounded-3xl bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full">
+      <div className="flex flex-col h-full p-4">
+        {/* Image Section */}
+        <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-slate-100 mb-4">
+          <img
+            src={course.image}
+            alt={course.title}
+            loading="lazy"
+            className="w-full h-full object-fill md:object-cover"
+          />
 
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4">
-          <span className="px-3 py-1 text-xs font-semibold text-white bg-black/70 rounded-full backdrop-blur">
-            {course.category}
-          </span>
-        </div>
-      </div>
+          {/* Level Badge */}
+          <div className="absolute bottom-3 right-3 bg-white px-3 py-1.5 rounded-lg shadow-sm">
+            <span className="text-sm font-bold text-slate-800">
+              {course.level}
+            </span>
+          </div>
 
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
-        {/* Level */}
-        <div className="flex items-center justify-between mb-3">
-          <span className="inline-block px-3 py-1 text-xs font-bold tracking-wide uppercase text-red-500 bg-red-50 rounded-full">
-            {course.level}
-          </span>
-          <span className="text-slate-500 text-xs font-bold ml-2">{course.duration}</span>
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/10 to-transparent pointer-events-none" />
         </div>
 
-        {/* Title */}
-        <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-red-500 transition-colors">
-          {course.title}
-        </h3>
+        {/* Content */}
+        <div className="flex flex-col gap-3 flex-grow">
+          {/* Meta Row */}
+          <div className="flex justify-between items-center text-xs font-medium text-slate-500">
+            <span>{course.duration}</span>
+            {course.lessons && <span>{course.lessons} Lessons</span>}
+          </div>
 
-        {/* Description */}
-        <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
-          {course.description}
-        </p>
+          {/* Title */}
+          <h3 className="text-lg font-bold text-slate-900 leading-snug line-clamp-2">
+            {course.title}
+          </h3>
 
-    
+          {/* Description */}
+          <p className="text-sm text-slate-600 line-clamp-3">
+            {course.description}
+          </p>
 
-        {/* CTA */}
-        <Link to={`/course/${course.link}`} className="w-full py-3 px-4 bg-gradient-to-r from-red-500 to-pink-600 text-white text-center font-semibold rounded-xl shadow-md hover:shadow-lg hover:from-red-600 hover:to-pink-700 active:scale-[0.98] transition-all duration-200">
-          View Course
-        </Link>
+          {/* Footer */}
+          <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
+            {course.students && (
+              <span className="text-xs font-semibold text-slate-500">
+                {course.students.toLocaleString()} Students
+              </span>
+            )}
+
+            <Link
+              to={`/course/${course.link}`}
+              className="px-3 py-3 md:px-10 rounded-full bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white text-sm hover:shadow-lg transition-all"
+            >
+              View Course
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

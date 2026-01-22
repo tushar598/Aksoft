@@ -111,7 +111,8 @@ const CarousalSection = () => {
         <motion.div
           key={index}
           custom={direction}
-          className="absolute inset-0 p-5 flex flex-col lg:flex-row items-center justify-center bg-[#f5f5f7] px-6 lg:px-20"
+          className="absolute inset-0 p-5 flex flex-col lg:flex-row items-center shadow-t-lg rounded-2xl
+            justify-center  px-6 lg:px-20"
           variants={{
             enter: { opacity: 0 },
             center: { opacity: 1 },

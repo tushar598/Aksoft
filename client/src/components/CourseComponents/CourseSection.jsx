@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { COURSES, CATEGORIES } from "./courseconstants";
 import CourseCard from "./CourseCards";
+import CarousalSection from "./CarousalSection";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,11 +50,12 @@ const CourseSection = () => {
   return (
     <section
       id="courses"
-      className="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-screen"
+      className="py-8 px-2 sm:px-6 lg:px-1 max-w-7xl bg-[#f9fafb] mx-auto min-h-screen"
       ref={containerRef}
     >
+      <CarousalSection />
       {/* Heading */}
-      <div className="text-center max-w-3xl mx-auto mb-14">
+      <div className="text-center max-w-3xl mx-auto mb-14 mt-10">
         <h2 className="text-4xl font-semibold text-[#fa4b37]">
           Featured Courses
         </h2>
