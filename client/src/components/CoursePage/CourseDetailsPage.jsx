@@ -277,7 +277,7 @@
 //   );
 // }
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Roadmap from "./Roadmap";
@@ -325,81 +325,92 @@ const CourseRoadmapData = {
 
 export default function CourseDetailpage() {
   const { course } = useParams();
+  const splitRef = useRef(null); // 🔹 ref for split layout section
 
   const roadmap = CourseRoadmapData[course] || CourseRoadmapData.cpp;
 
   const courseTitle =
     course === "cpp"
-      ? [
-          "C++ Programming",
-          "Master C++ from fundamentals to performance-oriented coding.",
-        ]
+      ? ["C++ Programming", "Master C++ from fundamentals to performance-oriented coding."]
       : course === "corejava"
-        ? [
-            "Core Java",
-            "Build a strong Java foundation with OOP and JVM internals.",
-          ]
-        : course === "pythonbasics"
-          ? [
-              "Python Basics",
-              "Clean syntax, logic, and real-world programming.",
-            ]
-          : course === "advancedjava"
-            ? ["Advanced Java", "Enterprise Java & backend systems."]
-            : course === "basicc"
-              ? ["C Programming", "Low-level programming fundamentals."]
-              : course === "basicjavascript"
-                ? [
-                    "JavaScript Basics",
-                    "Interactive web development essentials.",
-                  ]
-                : course === "htmlcssjs"
-                  ? ["HTML, CSS & JS", "Frontend foundation for responsive UI."]
-                  : course === "mernstack"
-                    ? ["MERN Stack", "Full-stack development mastery."]
-                    : course === "dbms"
-                      ? ["DBMS", "Data storage, indexing, and optimization."]
-                      : course === "dsafoundations"
-                        ? [
-                            "DSA Foundations",
-                            "Crack interviews with algorithms.",
-                          ]
-                        : ["C++ Programming", "Step-by-step mastery."];
+      ? ["Core Java", "Build a strong Java foundation with OOP and JVM internals."]
+      : course === "pythonbasics"
+      ? ["Python Basics", "Clean syntax, logic, and real-world programming."]
+      : course === "advancedjava"
+      ? ["Advanced Java", "Enterprise Java & backend systems."]
+      : course === "basicc"
+      ? ["C Programming", "Low-level programming fundamentals."]
+      : course === "basicjavascript"
+      ? ["JavaScript Basics", "Interactive web development essentials."]
+      : course === "htmlcssjs"
+      ? ["HTML, CSS & JS", "Frontend foundation for responsive UI."]
+      : course === "mernstack"
+      ? ["MERN Stack", "Full-stack development mastery."]
+      : course === "dbms"
+      ? ["DBMS", "Data storage, indexing, and optimization."]
+      : course === "dsafoundations"
+      ? ["DSA Foundations", "Crack interviews with algorithms."]
+      : ["C++ Programming", "Step-by-step mastery."];
 
   const faqData =
     course === "cpp"
       ? cppFaqData
       : course === "corejava"
-        ? coreJavaFaqData
-        : course === "pythonbasics"
-          ? pythonFaqData
-          : course === "advancedjava"
-            ? advancedJavaFaqData
-            : course === "basicc"
-              ? cFaqData
-              : course === "basicjavascript"
-                ? jsFaqData
-                : course === "htmlcssjs"
-                  ? htmlCssJsFaqData
-                  : course === "mernstack"
-                    ? mernFaqData
-                    : course === "dbms"
-                      ? dbmsFaqData
-                      : course === "dsafoundations"
-                        ? dsaFaqData
-                        : cppFaqData;
+      ? coreJavaFaqData
+      : course === "pythonbasics"
+      ? pythonFaqData
+      : course === "advancedjava"
+      ? advancedJavaFaqData
+      : course === "basicc"
+      ? cFaqData
+      : course === "basicjavascript"
+      ? jsFaqData
+      : course === "htmlcssjs"
+      ? htmlCssJsFaqData
+      : course === "mernstack"
+      ? mernFaqData
+      : course === "dbms"
+      ? dbmsFaqData
+      : course === "dsafoundations"
+      ? dsaFaqData
+      : cppFaqData;
+
+  /* ===== FIXED SCROLL PROGRESS ===== */
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!splitRef.current) return;
+
+      const section = splitRef.current;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const scrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+
+      // start scrolling when top of section enters viewport
+      const start = sectionTop - viewportHeight / 2;
+      const end = sectionTop + sectionHeight - viewportHeight / 2;
+
+      const progress = Math.min(Math.max((scrollY - start) / (end - start), 0), 1);
+
+      const bar = document.getElementById("scroll-progress");
+      if (bar) bar.style.height = `${progress * 100}%`;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // initialize
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   /* ===== Shared Roadmap + FAQ block ===== */
   const RoadmapAndFaq = (
     <>
       <div>
-        <div className="text-center  mt-20 mb-10">
-          <h2 className="text-4xl  font-bold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
+        <div className="text-center mt-20 mb-10">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
             Master {courseTitle[0]}
           </h2>
-          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
-            {courseTitle[1]}
-          </p>
+          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">{courseTitle[1]}</p>
         </div>
         <Roadmap data={roadmap.slice(1)} />
       </div>
@@ -412,37 +423,25 @@ export default function CourseDetailpage() {
     <div className="bg-white text-gray-900">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center bg-black">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/large_2x.mp4"
-          autoPlay
-          muted
-          playsInline
-        />
+        <video className="absolute inset-0 w-full h-full object-cover" src="/large_2x.mp4" autoPlay muted playsInline />
         <div className="absolute inset-0 bg-gradient-to-t from-[#fa4b37]/90 to-[#df2771]/90" />
-
         <div className="relative z-10 px-6 text-center">
-          <motion.h1
-            className="text-4xl md:text-6xl font-bold text-white"
-            variants={fadeInUp}
-            initial="hidden"
-            animate="visible"
-          >
+          <motion.h1 className="text-4xl md:text-6xl font-bold text-white" variants={fadeInUp} initial="hidden" animate="visible">
             Learn {courseTitle[0]}
           </motion.h1>
-
-          <motion.p
-            className="mt-6 max-w-3xl mx-auto text-lg text-gray-100"
-            variants={fadeInUp}
-            transition={{ delay: 0.2 }}
-          >
+          <motion.p className="mt-6 max-w-3xl mx-auto text-lg text-gray-100" variants={fadeInUp} transition={{ delay: 0.2 }}>
             {courseTitle[1]}
           </motion.p>
         </div>
       </section>
 
       {/* SPLIT LAYOUT */}
-      <section className="relative bg-[#f8f9fa]">
+      <section ref={splitRef} className="relative bg-[#f8f9fa]">
+        {/* Scroll indicator */}
+        <div className="absolute right-6 top-20 bottom-20 w-[2px] bg-gray-200 hidden lg:block">
+          <div id="scroll-progress" className="w-full bg-gradient-to-b from-[#fa4b37] to-[#df2771]" style={{ height: "0%" }} />
+        </div>
+
         <div className="max-w-7xl mx-auto py-20 px-4 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-1">
           {/* LEFT — DESKTOP ONLY */}
           <aside className="hidden lg:block space-y-28">{RoadmapAndFaq}</aside>
@@ -451,19 +450,10 @@ export default function CourseDetailpage() {
           <main className="space-y-28">
             <div className="sticky top-24 space-y-8">
               <div>
-                <h4 className="font-bold mb-4 text-sm uppercase tracking-wide">
-                  Who is this course for?
-                </h4>
+                <h4 className="font-bold mb-4 text-sm uppercase tracking-wide">Who is this course for?</h4>
                 <ul className="space-y-3">
-                  {[
-                    "Aspiring Backend Developers",
-                    "Students targeting Service-Based Companies",
-                    "Android aspirants",
-                  ].map((item, i) => (
-                    <li
-                      key={i}
-                      className="flex gap-3 p-4 bg-white rounded-xl shadow-sm"
-                    >
+                  {["Aspiring Backend Developers", "Students targeting Service-Based Companies", "Android aspirants"].map((item, i) => (
+                    <li key={i} className="flex gap-3 p-4 bg-white rounded-xl shadow-sm">
                       <span className="w-2 h-2 mt-2 rounded-full bg-[#fa4b37]" />
                       <span className="text-sm text-gray-600">{item}</span>
                     </li>
@@ -472,26 +462,20 @@ export default function CourseDetailpage() {
               </div>
 
               <div>
-                <h4 className="font-bold mb-4 text-sm uppercase tracking-wide">
-                  What you get
-                </h4>
+                <h4 className="font-bold mb-4 text-sm uppercase tracking-wide">What you get</h4>
                 <div className="bg-white p-4 rounded-xl shadow-sm space-y-3">
-                  {["Live Projects", "Oracle Prep", "Resume Review"].map(
-                    (item, i) => (
-                      <div key={i} className="flex gap-3 text-sm font-medium">
-                        <span className="w-2 h-2 rounded-full bg-amber-500" />
-                        {item}
-                      </div>
-                    ),
-                  )}
+                  {["Live Projects", "Oracle Prep", "Resume Review"].map((item, i) => (
+                    <div key={i} className="flex gap-3 text-sm font-medium">
+                      <span className="w-2 h-2 rounded-full bg-amber-500" />
+                      {item}
+                    </div>
+                  ))}
                 </div>
               </div>
 
               <div className="sticky bottom-4">
                 <div className="bg-white p-5 rounded-xl shadow-lg text-center">
-                  <button className="w-full bg-[#fa4b37] text-white py-3 rounded-lg font-bold">
-                    Enquire Now
-                  </button>
+                  <button className="w-full bg-[#fa4b37] text-white py-3 rounded-lg font-bold">Enquire Now</button>
                 </div>
               </div>
             </div>
