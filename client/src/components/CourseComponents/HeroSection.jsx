@@ -31,7 +31,7 @@ export const HeroSection = () => {
             opacity: 0,
             duration: 1,
           },
-          "-=1.2"
+          "-=1.2",
         )
         .from(
           [titleLine1Ref.current],
@@ -42,7 +42,7 @@ export const HeroSection = () => {
             stagger: 0.2,
             skewY: 5,
           },
-          "-=1"
+          "-=1",
         );
 
       gsap.to(bgImageRef.current, {
@@ -74,7 +74,7 @@ export const HeroSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[800px] overflow-hidden bg-brand-dark"
+      className="relative w-full h-[800px] overflow-hidden bg-brand-dark md:mb-10"
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">

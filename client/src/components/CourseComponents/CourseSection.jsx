@@ -3,12 +3,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { COURSES, CATEGORIES } from "./courseconstants";
 import CourseCard from "./CourseCards";
-import CarousalSection from "./CarousalSection";
+import useCourseFilter from "../../hooks/useCourseFilter";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CourseSection = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const { filter: activeCategory, setFilter } = useCourseFilter();
   const containerRef = useRef(null);
   const cardsRef = useRef(null);
 
@@ -40,7 +40,7 @@ const CourseSection = () => {
           duration: 0.6,
           ease: "power2.out",
           overwrite: "auto",
-        }
+        },
       );
     }, cardsRef);
 
@@ -53,10 +53,9 @@ const CourseSection = () => {
       className="py-8 px-2 sm:px-6 lg:px-1 max-w-7xl bg-[#f9fafb] mx-auto min-h-screen"
       ref={containerRef}
     >
-      <CarousalSection />
       {/* Heading */}
-      <div className="text-center max-w-3xl mx-auto mb-14 mt-10">
-        <h2 className="text-4xl font-semibold text-[#fa4b37]">
+      <div className="text-center max-w-3xl mx-auto mb-14 mt-10 md:mt-20">
+        <h2 className="text-4xl font-semibold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
           Featured Courses
         </h2>
         <p className="text-gray-500 mt-3">
@@ -68,15 +67,15 @@ const CourseSection = () => {
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
-            onClick={() => setActiveCategory(cat)}
+            onClick={() => setFilter(cat)}
             className={`
-              px-8 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 border
-              ${
-                activeCategory === cat
-                  ? "bg-gradient-to-r from-red-500 to-pink-600 text-white border-transparent shadow-lg shadow-red-200 transform scale-105"
-                  : "bg-white text-slate-600 border-slate-300 hover:border-red-300 hover:text-red-500 hover:bg-red-50"
-              }
-            `}
+      px-8 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 border
+      ${
+        activeCategory === cat
+          ? "bg-gradient-to-r from-red-500 to-pink-600 text-white border-transparent shadow-lg shadow-red-200 transform scale-105"
+          : "bg-white text-slate-600 border-slate-300 hover:border-red-300 hover:text-red-500 hover:bg-red-50"
+      }
+    `}
           >
             {cat}
           </button>

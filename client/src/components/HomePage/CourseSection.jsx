@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import useCourseFilter from "../../hooks/useCourseFilter";
 
-const filters = ["Beginner", "Web Dev", "Problem Solving"];
+const filters = ["All", "Beginner", "Web Dev", "Problem Solving"];
 
 const courses = [
   {
@@ -164,7 +164,10 @@ const CourseSection = () => {
           className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
         >
           {courses
-            .filter((course) => course.level === filter)
+            .filter((course) => {
+              if (filter === "All") return true;
+              return course.level === filter;
+            })
             .map((course) => (
               <motion.div
                 key={course.id}

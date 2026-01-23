@@ -3,6 +3,7 @@ import { ChevronDown, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+
 gsap.registerPlugin(ScrollTrigger);
 
 const AccordionItem = ({ question, isOpen, onClick }) => {
@@ -15,11 +16,11 @@ const AccordionItem = ({ question, isOpen, onClick }) => {
         <span
           className={`text-lg font-medium transition-colors ${
             isOpen
-              ? "text-brand-blue"
+              ? "bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent"
               : "text-slate-900 group-hover:text-brand-blue"
           }`}
         >
-          {question}
+          {question.QandA[0]}
         </span>
         <ChevronDown
           className={`text-slate-400 transition-transform duration-300 ${
@@ -33,26 +34,17 @@ const AccordionItem = ({ question, isOpen, onClick }) => {
           isOpen ? "max-h-40 opacity-100 pb-6" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="text-slate-500 leading-relaxed">
-          Yes, Snappy is built with industry-standard encryption protocols to
-          ensure your data remains private and secure at all times. We do not
-          sell your personal information.
-        </p>
+        <p className="text-slate-500 leading-relaxed">{question.QandA[1]}</p>
       </div>
     </div>
   );
 };
 
-const FAQSection = () => {
+const FAQSection = ({questions}) => {
   const [openIndex, setOpenIndex] = useState(1); // Default open item
   const sectionRef = useRef(null);
 
-  const questions = [
-    "What makes Snappy different from other messaging apps?",
-    "How secure are my conversations on Snappy?",
-    "Can I personalize my Snappy experience?",
-    "What group features does Snappy offer?",
-  ];
+  
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -98,7 +90,7 @@ const FAQSection = () => {
               placeholder="Enter your email"
               className="w-full pl-12 pr-32 py-4 rounded-full border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition-all"
             />
-            <button className="absolute right-2 top-2 bottom-2 bg-brand-blue hover:bg-blue-600 text-white font-medium px-6 rounded-full transition-colors">
+            <button className="absolute right-2 top-2 bottom-2 bg-gradient-to-r from-[#fa4b37] to-[#df2771]  text-white font-medium px-6 rounded-full transition-colors">
               Submit
             </button>
           </div>
