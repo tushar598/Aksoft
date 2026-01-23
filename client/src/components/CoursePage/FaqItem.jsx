@@ -85,80 +85,81 @@ const FaqItem = ({ service, isActive, onActivate }) => {
   }, [isActive]);
 
   return (
+   <div
+  ref={containerRef}
+  onClick={onActivate}
+  className={`relative w-full overflow-hidden cursor-pointer group
+    border-b border-gray-200
+    ${isActive ? "bg-gray-50" : "bg-white hover:bg-gray-50/60"}
+    transition-colors duration-300`}
+  style={{ height: "96px" }}
+>
+  <div
+    className="
+      w-full h-full relative
+      flex flex-col
+      px-5 sm:px-6 md:px-8
+      py-5 sm:py-6
+    "
+  >
+    {/* Number */}
+    <div className="text-xs sm:text-sm font-medium text-gray-400 tracking-wide mb-1">
+      FAQ {service.number}
+    </div>
+
+    {/* ACTIVE CONTENT */}
     <div
-      ref={containerRef}
-      onClick={onActivate}
-      className={`relative w-full border-b border-gray-300 overflow-hidden cursor-pointer group ${
-        isActive ? "bg-white" : "hover:bg-gray-50"
-      } transition-colors duration-300`}
-      style={{ height: "96px" }}
+      ref={contentRef}
+      className="
+        opacity-0
+        flex flex-col gap-3
+        relative
+        mt-3
+        w-full
+        max-w-4xl
+        z-10
+        pointer-events-none md:pointer-events-auto
+      "
     >
-      <div
+      <h2
+        ref={leftTitleRef}
         className="
-          w-full h-full relative
-          flex flex-col
-          px-4 sm:px-6 md:px-8
-          py-6 sm:py-7 md:py-8
+          font-semibold tracking-tight text-gray-900
+          text-lg sm:text-xl md:text-2xl
+          leading-snug
         "
       >
-        {/* Number */}
-        <div className="text-sm sm:text-base md:text-lg font-medium text-gray-500 mb-2 ">
-          /{service.number}
-        </div>
+        {service.title}
+      </h2>
 
-        {/* ACTIVE CONTENT */}
-        <div
-          ref={contentRef}
-          className="
-    opacity-0
-    flex flex-col gap-4
-    relative
-    mt-4 md:mt-0
-    w-full
-    px-0 md:px-4
-    pb-6 md:pb-0
-    z-10
-    pointer-events-none md:pointer-events-auto
-  "
-        >
-          <h2
-            ref={leftTitleRef}
-            className="
-              font-bold  tracking-tight text-black
-              text-2xl sm:text-3xl md:text-4xl lg:text-4xl
-              leading-snug 
-            "
-          >
-            {service.title}
-          </h2>
-
-          <p
-            ref={descRef}
-            className="
-              text-gray-500
-              text-sm sm:text-base
-              leading-relaxed
-              max-w-3xl
-            "
-          >
-            {service.description}
-          </p>
-        </div>
-
-        {/* INACTIVE TITLE */}
-        <div className="absolute right-4 sm:right-6 md:right-0 top-0 h-24 flex items-center pointer-events-none">
-          <h2
-            ref={rightTitleRef}
-            className={`font-bold tracking-tight text-black text-right transition-opacity duration-300
-              text-lg sm:text-xl md:text-2xl lg:text-3xl
-              ${isActive ? "opacity-0" : "opacity-100"}
-            `}
-          >
-            {service.title}
-          </h2>
-        </div>
-      </div>
+      <p
+        ref={descRef}
+        className="
+          text-gray-600
+          text-sm sm:text-base
+          leading-relaxed
+        "
+      >
+        {service.description}
+      </p>
     </div>
+
+    {/* INACTIVE TITLE */}
+    <div className="absolute right-5 sm:right-6 md:right-8 top-0 h-24 flex items-center pointer-events-none">
+      <h2
+        ref={rightTitleRef}
+        className={`font-medium text-gray-800 text-right
+          text-base sm:text-lg md:text-xl
+          transition-opacity duration-300
+          ${isActive ? "opacity-0" : "opacity-100"}
+        `}
+      >
+        {service.title}
+      </h2>
+    </div>
+  </div>
+</div>
+
   );
 };
 

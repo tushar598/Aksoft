@@ -1,7 +1,287 @@
+// import React from "react";
+// import { useParams } from "react-router-dom";
+// import { motion } from "framer-motion";
+// import Roadmap from "./Roadmap";
+// import roadmapData from "../../data/roadmapData.json";
+// import coreJavaRoadmapData from "../../data/coreJavaRoadmapData.json";
+// import pythonRoadmapData from "../../data/pythonRoadmapData.json";
+// import advanceJavaRoadmapData from "../../data/advanceJavaRoadmapData.json";
+// import basicCRoadmapData from "../../data/basicCRoadmapData.json";
+// import basicJavaScriptRoadmapData from "../../data/basicJavaScriptRoadmapData.json";
+// import htmlCssJsRoadmapData from "../../data/htmlCssJsRoadmapData.json";
+// import mernStackRoadmapData from "../../data/mernStackRoadmapData.json";
+// import dbmsRoadmapData from "../../data/dbmsRoadmapData.json";
+// import dsaRoadmapData from "../../data/dsaRoadmapData.json";
+// import FaqSection from "./FaqSection";
+// import { cppFaqData } from "../../data/faqData/cppfaq";
+// import { advancedJavaFaqData } from "../../data/faqData/advancedJavaFaqData";
+// import { cFaqData } from "../../data/faqData/cFaqData";
+// import { dbmsFaqData } from "../../data/faqData/dbmsFaqData";
+// import { dsaFaqData } from "../../data/faqData/dsaFaqData";
+// import { mernFaqData } from "../../data/faqData/mernFaqData";
+// import { htmlCssJsFaqData } from "../../data/faqData/htmlCssJsFaqData";
+// import { pythonFaqData } from "../../data/faqData/pythonFaqData";
+// import { coreJavaFaqData } from "../../data/faqData/coreJavaFaqData";
+// import { jsFaqData } from "../../data/faqData/jsFaqData";
+
+// const fadeInUp = {
+//   hidden: { opacity: 0, y: 50 },
+//   visible: { opacity: 1, y: 0 },
+// };
+
+// const CourseRoadmapData = {
+//   cpp: roadmapData,
+//   corejava: coreJavaRoadmapData,
+//   pythonbasics: pythonRoadmapData,
+//   advancedjava: advanceJavaRoadmapData,
+//   basicc: basicCRoadmapData,
+//   basicjavascript: basicJavaScriptRoadmapData,
+//   htmlcssjs: htmlCssJsRoadmapData,
+//   mernstack: mernStackRoadmapData,
+//   dbms: dbmsRoadmapData,
+//   dsafoundations: dsaRoadmapData,
+// };
+
+// export default function MacBookAirShowcase() {
+//   const { course } = useParams();
+//   let courseTitle = course || "cpp";
+
+//   const activeRoadmapData =
+//     CourseRoadmapData[courseTitle] || CourseRoadmapData.cpp;
+
+//   courseTitle =
+//     course === "cpp"
+//       ? [
+//           "C++ Programming",
+//           "This course covers C++ programming from basics to intermediate concepts, including object-oriented programming, memory management, STL, and performance-oriented coding. It is ideal for competitive programming and system-level development.",
+//         ]
+//       : course === "corejava"
+//       ? [
+//           "Core Java",
+//           "This course covers Core Java concepts including OOP principles, exception handling, collections, multithreading, file handling, and JVM internals. It builds a strong base for backend development, enterprise applications, and advanced Java frameworks.",
+//         ]
+//       : course === "pythonbasics"
+//       ? [
+//           "Python Basics",
+//           "This course introduces Python programming with a focus on clean syntax, data structures, functions, file handling, and basic OOP. It is suitable for beginners and serves as a foundation for data science, automation, and backend development.",
+//         ]
+//       : course === "advancedjava"
+//       ? [
+//           "Advanced Java",
+//           "This course focuses on enterprise-level Java development. Topics include JDBC, Servlets, JSP, Spring fundamentals, REST APIs, and backend architecture, preparing learners for real-world Java backend roles.",
+//         ]
+//       : course === "basicc"
+//       ? [
+//           "Basic C Programming",
+
+//           "This course introduces the fundamentals of C programming, focusing on core concepts like syntax, data types, control structures, functions, arrays, and pointers. It helps learners build a strong programming foundation and understand low-level memory concepts essential for computer science.",
+//         ]
+//       : course === "basicjavascript"
+//       ? [
+//           "Basic JavaScript",
+//           "This course teaches JavaScript fundamentals required for web development. It covers variables, functions, arrays, objects, DOM manipulation, events, and asynchronous programming concepts, helping learners build interactive and dynamic web applications.",
+//         ]
+//       : course === "htmlcssjs"
+//       ? [
+//           "HTML, CSS & JavaScript",
+//           "This course provides a complete frontend foundation by combining HTML for structure, CSS for styling, and JavaScript for interactivity. Learners gain practical skills to build responsive, user-friendly, and visually appealing web pages.",
+//         ]
+//       : course === "mernstack"
+//       ? [
+//           "MERN Stack Development",
+//           "This course teaches full-stack web development using MongoDB, Express, React, and Node.js. Learners build scalable web applications, understand REST APIs, authentication, and deployment, gaining real-world project experience.",
+//         ]
+//       : course === "dbms"
+//       ? [
+//           "Database Management Systems",
+//           "This course explains how data is stored, managed, and retrieved efficiently. Topics include ER models, normalization, SQL, indexing, transactions, concurrency control, and database design, which are crucial for backend and system design.",
+//         ]
+//       : course === "dsafoundations"
+//       ? [
+//           "Data Structures & Algorithms",
+//           "This course builds problem-solving skills using data structures and algorithms. It covers arrays, linked lists, stacks, queues, trees, graphs, recursion, sorting, searching, and complexity analysis, essential for coding interviews and competitive programming.",
+//         ]
+//       : [
+//           "C++ Programming",
+//           "This course covers C++ programming from basics to intermediate concepts, including object-oriented programming, memory management, STL, and performance-oriented coding. It is ideal for competitive programming and system-level development.",
+//         ];
+
+//   const faqData =
+//     course === "cpp"
+//       ? cppFaqData
+//       : course === "corejava"
+//       ? coreJavaFaqData
+//       : course === "pythonbasics"
+//       ? pythonFaqData
+//       : course === "advancedjava"
+//       ? advancedJavaFaqData
+//       : course === "basicc"
+//       ? cFaqData
+//       : course === "basicjavascript"
+//       ? jsFaqData
+//       : course === "htmlcssjs"
+//       ? htmlCssJsFaqData
+//       : course === "mernstack"
+//       ? mernFaqData
+//       : course === "dbms"
+//       ? dbmsFaqData
+//       : course === "dsafoundations"
+//       ? dsaFaqData
+//       : cppFaqData;
+
+//   return (
+//     <div className="bg-white text-gray-900 overflow-x-hidden">
+//       {/* HERO SECTION */}
+//       <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-black">
+//         {/* BACKGROUND VIDEO */}
+//         <video
+//           className="absolute inset-0 w-full h-full object-cover z-0"
+//           src="/large_2x.mp4"
+//           autoPlay
+//           muted
+//           playsInline
+//           preload="metadata"
+//         />
+
+//         {/* OVERLAY */}
+//         <div className="absolute inset-0 bg-gradient-to-t from-[#fa4b37]/[0.9] to-[#df2771]/[0.9] z-5" />
+
+//         {/* CONTENT */}
+//         <div className="relative z-10 px-6 lg:text-center lg:px-14">
+//           <motion.h1
+//             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+//             variants={fadeInUp}
+//             initial="hidden"
+//             animate="visible"
+//             transition={{ duration: 0.7 }}
+//           >
+//             Learn {courseTitle[0]}
+//           </motion.h1>
+
+//           <motion.p
+//             className="mt-4 text-base lg:px-[20%] sm:text-lg md:text-xl text-gray-100 font-medium"
+//             variants={fadeInUp}
+//             transition={{ delay: 0.2 }}
+//           >
+//             {courseTitle[1]}
+//           </motion.p>
+//         </div>
+//       </section>
+
+//       {/* COURSE DESCRIPTION + FEATURES */}
+//       <section className="relative bg-[#f0f2fb] py-28 px-6 overflow-hidden  ">
+//         {/* Background Glow */}
+//         <div className="absolute inset-0 -z-10">
+//           <div className="absolute top-0 left-1/2  w-[600px] h-[600px] bg-indigo-500 " />
+//         </div>
+
+//         {/* COURSE DESCRIPTION */}
+//         <motion.div
+//           className="max-w-4xl mx-auto text-center"
+//           variants={fadeInUp}
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true }}
+//         >
+//           <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight  bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
+//           {courseTitle[0]}
+//           </h2>
+//         </motion.div>
+
+//         {/* FEATURES */}
+//         <motion.div
+//           className="mt-20 max-w-6xl mx-auto grid gap-10 md:grid-cols-3"
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true }}
+//           transition={{ staggerChildren: 0.2 }}
+//         >
+//           {activeRoadmapData?.[0]?.features.map((feat, i) => (
+//             <motion.div
+//               key={i}
+//               variants={fadeInUp}
+//               whileHover={{ scale: 1.05 }}
+//               className="z-10 px-8 py-4 rounded-lg border-2 border-gray-900 bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771]
+//         shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center max-w-xs md:max-w-sm w-full
+//          hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+//         transition-all duration-200"
+//             >
+//               <h3 className="text-xl font-bold mb-3 text-white">
+//                 {feat.title}
+//               </h3>
+//               <p className="text-gray-200 leading-relaxed">
+//                 {feat.description}
+//               </p>
+//             </motion.div>
+//           ))}
+//         </motion.div>
+//       </section>
+
+//       {/* NEW COURSE ROADMAP SECTION (Roadmap.sh Style) */}
+//       <section className="py-10 px-4 sm:px-6 bg-[#f8f9fa] relative">
+//         <div className="max-w-7xl mx-auto mb-16 text-center">
+//           <span className="text-purple-600 font-bold tracking-wider text-sm uppercase">
+//             Curriculum
+//           </span>
+//           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
+//             {courseTitle[0]} Path
+//           </h2>
+//           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+//             Step by step guide to learn {courseTitle[0]}.
+//           </p>
+
+//           {/* Legend similar to image */}
+//           <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+//             <div className="flex items-center gap-2">
+//               <div className="w-4 h-4 rounded-full bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] border border-black"></div>
+//               <span>Core Topic</span>
+//             </div>
+//             <div className="flex items-center gap-2">
+//               <div className="w-4 h-4 rounded-full bg-purple-100 border border-gray-400"></div>
+//               <span>Sub-concept</span>
+//             </div>
+//             <div className="flex items-center gap-2">
+//               <div className="w-4 h-4 rounded-full border border-dashed border-blue-400"></div>
+//               <span>Learning Flow</span>
+//             </div>
+//           </div>
+//         </div>
+
+//         <Roadmap data={activeRoadmapData.slice(1)} />
+//       </section>
+
+//       <section className="relative bg-[#fcfcf2] py-15 px-6 overflow-hidden  ">
+//         {/* COURSE DESCRIPTION */}
+//         <motion.div
+//           className="max-w-4xl mx-auto text-center"
+//           variants={fadeInUp}
+//           initial="hidden"
+//           whileInView="visible"
+//           viewport={{ once: true }}
+//         >
+//           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight  bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
+//             Master {courseTitle[0]} with Precision & Performance
+//           </h2>
+
+//           <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+//             {courseTitle[1]}
+//           </p>
+//         </motion.div>
+//       </section>
+
+//       <section>
+//         <FaqSection FaqData={faqData} />
+//       </section>
+
+//     </div>
+//   );
+// }
+
 import React from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import Roadmap from "./Roadmap";
+
 import roadmapData from "../../data/roadmapData.json";
 import coreJavaRoadmapData from "../../data/coreJavaRoadmapData.json";
 import pythonRoadmapData from "../../data/pythonRoadmapData.json";
@@ -12,6 +292,7 @@ import htmlCssJsRoadmapData from "../../data/htmlCssJsRoadmapData.json";
 import mernStackRoadmapData from "../../data/mernStackRoadmapData.json";
 import dbmsRoadmapData from "../../data/dbmsRoadmapData.json";
 import dsaRoadmapData from "../../data/dsaRoadmapData.json";
+
 import FaqSection from "./FaqSection";
 import { cppFaqData } from "../../data/faqData/cppfaq";
 import { advancedJavaFaqData } from "../../data/faqData/advancedJavaFaqData";
@@ -25,7 +306,7 @@ import { coreJavaFaqData } from "../../data/faqData/coreJavaFaqData";
 import { jsFaqData } from "../../data/faqData/jsFaqData";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -42,124 +323,116 @@ const CourseRoadmapData = {
   dsafoundations: dsaRoadmapData,
 };
 
-export default function MacBookAirShowcase() {
+export default function CourseDetailpage() {
   const { course } = useParams();
-  let courseTitle = course || "cpp";
 
-  const activeRoadmapData =
-    CourseRoadmapData[courseTitle] || CourseRoadmapData.cpp;
+  const roadmap = CourseRoadmapData[course] || CourseRoadmapData.cpp;
 
-  courseTitle =
+  const courseTitle =
     course === "cpp"
       ? [
           "C++ Programming",
-          "This course covers C++ programming from basics to intermediate concepts, including object-oriented programming, memory management, STL, and performance-oriented coding. It is ideal for competitive programming and system-level development.",
+          "Master C++ from fundamentals to performance-oriented coding.",
         ]
       : course === "corejava"
-      ? [
-          "Core Java",
-          "This course covers Core Java concepts including OOP principles, exception handling, collections, multithreading, file handling, and JVM internals. It builds a strong base for backend development, enterprise applications, and advanced Java frameworks.",
-        ]
-      : course === "pythonbasics"
-      ? [
-          "Python Basics",
-          "This course introduces Python programming with a focus on clean syntax, data structures, functions, file handling, and basic OOP. It is suitable for beginners and serves as a foundation for data science, automation, and backend development.",
-        ]
-      : course === "advancedjava"
-      ? [
-          "Advanced Java",
-          "This course focuses on enterprise-level Java development. Topics include JDBC, Servlets, JSP, Spring fundamentals, REST APIs, and backend architecture, preparing learners for real-world Java backend roles.",
-        ]
-      : course === "basicc"
-      ? [
-          "Basic C Programming",
-
-          "This course introduces the fundamentals of C programming, focusing on core concepts like syntax, data types, control structures, functions, arrays, and pointers. It helps learners build a strong programming foundation and understand low-level memory concepts essential for computer science.",
-        ]
-      : course === "basicjavascript"
-      ? [
-          "Basic JavaScript",
-          "This course teaches JavaScript fundamentals required for web development. It covers variables, functions, arrays, objects, DOM manipulation, events, and asynchronous programming concepts, helping learners build interactive and dynamic web applications.",
-        ]
-      : course === "htmlcssjs"
-      ? [
-          "HTML, CSS & JavaScript",
-          "This course provides a complete frontend foundation by combining HTML for structure, CSS for styling, and JavaScript for interactivity. Learners gain practical skills to build responsive, user-friendly, and visually appealing web pages.",
-        ]
-      : course === "mernstack"
-      ? [
-          "MERN Stack Development",
-          "This course teaches full-stack web development using MongoDB, Express, React, and Node.js. Learners build scalable web applications, understand REST APIs, authentication, and deployment, gaining real-world project experience.",
-        ]
-      : course === "dbms"
-      ? [
-          "Database Management Systems",
-          "This course explains how data is stored, managed, and retrieved efficiently. Topics include ER models, normalization, SQL, indexing, transactions, concurrency control, and database design, which are crucial for backend and system design.",
-        ]
-      : course === "dsafoundations"
-      ? [
-          "Data Structures & Algorithms",
-          "This course builds problem-solving skills using data structures and algorithms. It covers arrays, linked lists, stacks, queues, trees, graphs, recursion, sorting, searching, and complexity analysis, essential for coding interviews and competitive programming.",
-        ]
-      : [
-          "C++ Programming",
-          "This course covers C++ programming from basics to intermediate concepts, including object-oriented programming, memory management, STL, and performance-oriented coding. It is ideal for competitive programming and system-level development.",
-        ];
+        ? [
+            "Core Java",
+            "Build a strong Java foundation with OOP and JVM internals.",
+          ]
+        : course === "pythonbasics"
+          ? [
+              "Python Basics",
+              "Clean syntax, logic, and real-world programming.",
+            ]
+          : course === "advancedjava"
+            ? ["Advanced Java", "Enterprise Java & backend systems."]
+            : course === "basicc"
+              ? ["C Programming", "Low-level programming fundamentals."]
+              : course === "basicjavascript"
+                ? [
+                    "JavaScript Basics",
+                    "Interactive web development essentials.",
+                  ]
+                : course === "htmlcssjs"
+                  ? ["HTML, CSS & JS", "Frontend foundation for responsive UI."]
+                  : course === "mernstack"
+                    ? ["MERN Stack", "Full-stack development mastery."]
+                    : course === "dbms"
+                      ? ["DBMS", "Data storage, indexing, and optimization."]
+                      : course === "dsafoundations"
+                        ? [
+                            "DSA Foundations",
+                            "Crack interviews with algorithms.",
+                          ]
+                        : ["C++ Programming", "Step-by-step mastery."];
 
   const faqData =
     course === "cpp"
       ? cppFaqData
       : course === "corejava"
-      ? coreJavaFaqData
-      : course === "pythonbasics"
-      ? pythonFaqData
-      : course === "advancedjava"
-      ? advancedJavaFaqData
-      : course === "basicc"
-      ? cFaqData
-      : course === "basicjavascript"
-      ? jsFaqData
-      : course === "htmlcssjs"
-      ? htmlCssJsFaqData
-      : course === "mernstack"
-      ? mernFaqData
-      : course === "dbms"
-      ? dbmsFaqData
-      : course === "dsafoundations"
-      ? dsaFaqData
-      : cppFaqData;
+        ? coreJavaFaqData
+        : course === "pythonbasics"
+          ? pythonFaqData
+          : course === "advancedjava"
+            ? advancedJavaFaqData
+            : course === "basicc"
+              ? cFaqData
+              : course === "basicjavascript"
+                ? jsFaqData
+                : course === "htmlcssjs"
+                  ? htmlCssJsFaqData
+                  : course === "mernstack"
+                    ? mernFaqData
+                    : course === "dbms"
+                      ? dbmsFaqData
+                      : course === "dsafoundations"
+                        ? dsaFaqData
+                        : cppFaqData;
+
+  /* ===== Shared Roadmap + FAQ block ===== */
+  const RoadmapAndFaq = (
+    <>
+      <div>
+        <div className="text-center  mt-20 mb-10">
+          <h2 className="text-4xl  font-bold bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
+            Master {courseTitle[0]}
+          </h2>
+          <p className="mt-4 text-gray-600 max-w-3xl mx-auto">
+            {courseTitle[1]}
+          </p>
+        </div>
+        <Roadmap data={roadmap.slice(1)} />
+      </div>
+
+      <FaqSection FaqData={faqData} />
+    </>
+  );
 
   return (
-    <div className="bg-white text-gray-900 overflow-x-hidden">
-      {/* HERO SECTION */}
-      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center bg-black">
-        {/* BACKGROUND VIDEO */}
+    <div className="bg-white text-gray-900">
+      {/* HERO */}
+      <section className="relative min-h-screen flex items-center justify-center bg-black">
         <video
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="absolute inset-0 w-full h-full object-cover"
           src="/large_2x.mp4"
           autoPlay
           muted
           playsInline
-          preload="metadata"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#fa4b37]/90 to-[#df2771]/90" />
 
-        {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#fa4b37]/[0.9] to-[#df2771]/[0.9] z-5" />
-
-        {/* CONTENT */}
-        <div className="relative z-10 px-6 lg:text-center lg:px-14">
+        <div className="relative z-10 px-6 text-center">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white"
+            className="text-4xl md:text-6xl font-bold text-white"
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.7 }}
           >
             Learn {courseTitle[0]}
           </motion.h1>
 
           <motion.p
-            className="mt-4 text-base lg:px-[20%] sm:text-lg md:text-xl text-gray-100 font-medium"
+            className="mt-6 max-w-3xl mx-auto text-lg text-gray-100"
             variants={fadeInUp}
             transition={{ delay: 0.2 }}
           >
@@ -168,113 +441,66 @@ export default function MacBookAirShowcase() {
         </div>
       </section>
 
-      {/* COURSE DESCRIPTION + FEATURES */}
-      <section className="relative bg-[#f0f2fb] py-28 px-6 overflow-hidden  ">
-        {/* Background Glow */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/2  w-[600px] h-[600px] bg-indigo-500 " />
+      {/* SPLIT LAYOUT */}
+      <section className="relative bg-[#f8f9fa]">
+        <div className="max-w-7xl mx-auto py-20 px-4 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-1">
+          {/* LEFT — DESKTOP ONLY */}
+          <aside className="hidden lg:block space-y-28">{RoadmapAndFaq}</aside>
+
+          {/* RIGHT — STICKY FEATURES */}
+          <main className="space-y-28">
+            <div className="sticky top-24 space-y-8">
+              <div>
+                <h4 className="font-bold mb-4 text-sm uppercase tracking-wide">
+                  Who is this course for?
+                </h4>
+                <ul className="space-y-3">
+                  {[
+                    "Aspiring Backend Developers",
+                    "Students targeting Service-Based Companies",
+                    "Android aspirants",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-3 p-4 bg-white rounded-xl shadow-sm"
+                    >
+                      <span className="w-2 h-2 mt-2 rounded-full bg-[#fa4b37]" />
+                      <span className="text-sm text-gray-600">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold mb-4 text-sm uppercase tracking-wide">
+                  What you get
+                </h4>
+                <div className="bg-white p-4 rounded-xl shadow-sm space-y-3">
+                  {["Live Projects", "Oracle Prep", "Resume Review"].map(
+                    (item, i) => (
+                      <div key={i} className="flex gap-3 text-sm font-medium">
+                        <span className="w-2 h-2 rounded-full bg-amber-500" />
+                        {item}
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+
+              <div className="sticky bottom-4">
+                <div className="bg-white p-5 rounded-xl shadow-lg text-center">
+                  <button className="w-full bg-[#fa4b37] text-white py-3 rounded-lg font-bold">
+                    Enquire Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </main>
         </div>
 
-        {/* COURSE DESCRIPTION */}
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight  bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
-          {courseTitle[0]} 
-          </h2>
-        </motion.div>
-
-        {/* FEATURES */}
-        <motion.div
-          className="mt-20 max-w-6xl mx-auto grid gap-10 md:grid-cols-3"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ staggerChildren: 0.2 }}
-        >
-          {activeRoadmapData?.[0]?.features.map((feat, i) => (
-            <motion.div
-              key={i}
-              variants={fadeInUp}
-              whileHover={{ scale: 1.05 }}
-              className="z-10 px-8 py-4 rounded-lg border-2 border-gray-900 bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771]
-        shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center max-w-xs md:max-w-sm w-full
-         hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
-        transition-all duration-200"
-            >
-              <h3 className="text-xl font-bold mb-3 text-white">
-                {feat.title}
-              </h3>
-              <p className="text-gray-200 leading-relaxed">
-                {feat.description}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/* MOBILE ROADMAP + FAQ */}
+        <div className="lg:hidden px-4 py-20 space-y-28">{RoadmapAndFaq}</div>
       </section>
-
-      {/* NEW COURSE ROADMAP SECTION (Roadmap.sh Style) */}
-      <section className="py-10 px-4 sm:px-6 bg-[#f8f9fa] relative">
-        <div className="max-w-7xl mx-auto mb-16 text-center">
-          <span className="text-purple-600 font-bold tracking-wider text-sm uppercase">
-            Curriculum
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2 mb-6">
-            {courseTitle[0]} Path
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Step by step guide to learn {courseTitle[0]}.
-          </p>
-
-          {/* Legend similar to image */}
-          <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] border border-black"></div>
-              <span>Core Topic</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full bg-purple-100 border border-gray-400"></div>
-              <span>Sub-concept</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full border border-dashed border-blue-400"></div>
-              <span>Learning Flow</span>
-            </div>
-          </div>
-        </div>
-
-        <Roadmap data={activeRoadmapData.slice(1)} />
-      </section>
-
-      
-      <section className="relative bg-[#fcfcf2] py-15 px-6 overflow-hidden  ">
-        {/* COURSE DESCRIPTION */}
-        <motion.div
-          className="max-w-4xl mx-auto text-center"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight  bg-gradient-to-r from-[#fa4b37] to-[#df2771] bg-clip-text text-transparent">
-            Master {courseTitle[0]} with Precision & Performance
-          </h2>
-
-          <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-            {courseTitle[1]}
-          </p>
-        </motion.div>
-      </section>
-
-      <section>
-        <FaqSection FaqData={faqData} />
-      </section>
-
-      
     </div>
   );
 }

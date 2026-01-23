@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 /* =======================
@@ -12,7 +12,7 @@ const BORDER_COLOR = "border-gray-900";
 /* =======================
    Roadmap Item Component
 ======================= */
-const RoadmapItem = ({ item, isLast }) => {
+const RoadmapItem = ({ item, isLast, isOpen, isUnlocked, onToggle }) => {
   return (
     <div className="relative flex flex-col items-center justify-center w-full mb-16 md:mb-24">
       {/* Central Connector Line */}
@@ -25,14 +25,22 @@ const RoadmapItem = ({ item, isLast }) => {
 
       {/* Main Topic Node */}
       <motion.div
+        onClick={isUnlocked ? onToggle : undefined}
         initial={{ scale: 0.8, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className={`relative z-10 px-8 py-4 rounded-lg border-2 ${BORDER_COLOR} ${MAIN_NODE_COLOR}
-        shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-center max-w-xs md:max-w-sm w-full
-         hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
-        transition-all duration-200`}
+        className={`
+          relative z-10 px-8 py-4 rounded-lg border-2 ${BORDER_COLOR} ${MAIN_NODE_COLOR}
+          shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]
+          text-center max-w-xs md:max-w-sm w-full
+          transition-all duration-200
+          ${
+            isUnlocked
+              ? "cursor-pointer hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]"
+              : "opacity-50 cursor-not-allowed"
+          }
+        `}
       >
         <span className="absolute -top-3 -left-3 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
           Step {item.step}
@@ -44,61 +52,66 @@ const RoadmapItem = ({ item, isLast }) => {
       </motion.div>
 
       {/* Sub Points */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-32 w-full max-w-4xl relative">
-        {/* Desktop Helper Lines */}
-        <svg
-          className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block -mt-8 overflow-visible"
-          style={{ zIndex: -1 }}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
+      {isOpen && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          transition={{ duration: 0.4 }}
+          className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-x-32 w-full max-w-4xl relative"
         >
-          {item.points.map((_, i) => {
-            const side = i % 2 === 0 ? "left" : "right";
+          {/* Desktop Helper Lines */}
+          <svg
+            className="absolute top-0 left-0 w-full h-full pointer-events-none hidden md:block -mt-8 overflow-visible"
+            style={{ zIndex: -1 }}
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            {item.points.map((_, i) => {
+              const side = i % 2 === 0 ? "left" : "right";
+              return (
+                <path
+                  key={i}
+                  d={`M 50 0 Q 50 20, ${side === "left" ? 25 : 75} 40`}
+                  fill="none"
+                  stroke="#94a3b8"
+                  strokeWidth="0.2"
+                  strokeDasharray="4 4"
+                  className="opacity-50"
+                />
+              );
+            })}
+          </svg>
+
+          {item.points.map((point, i) => {
+            const isLeft = i % 2 === 0;
+
             return (
-              <path
+              <motion.div
                 key={i}
-                d={`M 50 0 Q 50 20, ${side === "left" ? 25 : 75} 40`}
-                fill="none"
-                stroke="#94a3b8"
-                strokeWidth="0.2"
-                strokeDasharray="4 4"
-                className="opacity-50"
-              />
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 + i * 0.1 }}
+                className={`
+                  relative flex items-center gap-3 p-3 rounded-xl border ${BORDER_COLOR} ${SUB_NODE_COLOR}
+                  shadow-sm hover:bg-purple-200 transition-colors
+                  ${
+                    isLeft
+                      ? "md:justify-self-end md:mr-12"
+                      : "md:justify-self-start md:ml-12"
+                  }
+                  mx-auto md:mx-0 w-full md:w-auto max-w-xs
+                `}
+              >
+                <span className="text-sm md:text-base font-medium text-gray-800">
+                  {point}
+                </span>
+
+                <div className="md:hidden absolute top-0 left-1/2 w-0.5 h-4 bg-gray-300 -translate-y-full -translate-x-1/2 -z-10" />
+              </motion.div>
             );
           })}
-        </svg>
-
-        {item.points.map((point, i) => {
-          const isLeft = i % 2 === 0;
-
-          return (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2 + i * 0.1 }}
-              viewport={{ once: true }}
-              className={`
-                relative flex items-center gap-3 p-3 rounded-xl border ${BORDER_COLOR} ${SUB_NODE_COLOR}
-                shadow-sm hover:bg-purple-200 transition-colors cursor-default
-                ${
-                  isLeft
-                    ? "md:justify-self-end md:mr-12"
-                    : "md:justify-self-start md:ml-12"
-                }
-                mx-auto md:mx-0 w-full md:w-auto max-w-xs
-              `}
-            >
-              <span className="text-sm md:text-base font-medium text-gray-800">
-                {point}
-              </span>
-
-              {/* Mobile Connector */}
-              <div className="md:hidden absolute top-0 left-1/2 w-0.5 h-4 bg-gray-300 -translate-y-full -translate-x-1/2 -z-10" />
-            </motion.div>
-          );
-        })}
-      </div>
+        </motion.div>
+      )}
     </div>
   );
 };
@@ -107,6 +120,16 @@ const RoadmapItem = ({ item, isLast }) => {
    Roadmap Wrapper
 ======================= */
 const Roadmap = ({ data }) => {
+  const firstStep = data?.[0]?.step ?? null;
+
+  // ✅ first step open by default
+  const [openStep, setOpenStep] = useState(firstStep);
+
+  const handleToggle = (step) => {
+    // ✅ directly open clicked step (skip allowed)
+    setOpenStep(step);
+  };
+
   return (
     <div className="relative w-full overflow-hidden p-4">
       {/* Background Pattern */}
@@ -131,15 +154,17 @@ const Roadmap = ({ data }) => {
           <RoadmapItem
             key={index}
             item={item}
-            index={index}
             isLast={index === data.length - 1}
+            isOpen={openStep === item.step}
+            isUnlocked={true} // ✅ everything clickable
+            onToggle={() => handleToggle(item.step)}
           />
         ))}
 
         {/* End Node */}
         <div className="mt-4">
           <div className="h-8 w-0.5 border-l-2 border-blue-400 border-dashed mx-auto opacity-50" />
-          <div className="px-6 py-2 bg-gradient-to-br bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white border-2 border-black rounded-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+          <div className="px-6 py-2 bg-gradient-to-r from-[#fa4b37] to-[#df2771] text-white border-2 border-black rounded-lg font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             Certificate of Mastery
           </div>
         </div>
